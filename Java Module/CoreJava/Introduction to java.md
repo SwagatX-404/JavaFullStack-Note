@@ -66,5 +66,13 @@
 
 ## 12. Types Of applications ?
 - All available softwares of project on applications are broadly divided into 2 types.
-                 - I. Stand alone 
-                 - II. Internet applications
+                 - I. Stand alone  - Single comp. and single user app
+                 - II. Internet applications - Multi comp. and multi user app 
+
+       **Stand alone app** : An app that is install in one computer and it is accesible within the same computer  and if it is not accesible from other computer via internet is called stand alone app.
+
+       - **Example** - Calculator, Notepade, MS- Office , Antivirus, OS, VLC player etc.           
+
+       **Internet applications** : An app that is install in one computer and if it can be accesible from other computers via internet is called internet application.
+
+       - **Example** - tcs.com, shaddi.com, bookmytrip.com etc....
