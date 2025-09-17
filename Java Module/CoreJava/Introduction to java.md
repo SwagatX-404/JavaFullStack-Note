@@ -76,3 +76,46 @@
        **Internet applications** : An app that is install in one computer and if it can be accesible from other computers via internet is called internet application.
 
        - **Example** - tcs.com, shaddi.com, bookmytrip.com etc....
+
+       **NOTE** - In simple way we can say, 
+                - If we download, insatll then access an app then it is stand alone app.
+                - without downloading, installing if we access an app. then it is internet app.
+---
+---
+## 13. Platform, Platform dependency, Platform independency ?
+
+- **Platform** - A platform is an environment in which a program is loaded. executed and generates outputs.
+     
+         - A platform can be a software only or hardware only or Both.
+         - A computer Platform is both SW and HWs That is OS+HW devices, [RAM, ROM, Processor].
+
+- C an C++ Platform is OS. it means C and C++ programs are directly executed by OS.
+- Java program Platform is JVM and JVM platform is OS.
+- Python program platform is PVM.
+- C# .net ----> CLR
+- HTML -------> Browser
+- Video file -----> Media player (VLC player)   etc.
+
+**Platform Dependency** - A program develope and compiled by OS if it is not executed in diffrent OS is called platform dependent Program.
+         - EX : C , C++
+
+**Platform Independency** - A program that is develope and compiled by OS, If it can be executed in different OS is called platform independent program.
+        - EX : JAVA, C# .Net, Python.
+
+## Why C and C++ Programming language are Platform Dependent ?
+
+- Window |   Source code   |  Compiled code       |   Executed code     |   ---> O/P
+-        |      Abc.c      |  Compiler-> Abc.obj  |   Abc.exe           |   O/P
+                                            ---->Machine Language Of Window 
+
+- Similarly Linux and Mac Os has there own diff. Machine Language.
+      - ---->Machine Language Of Linux
+      - ---->Machine Language Of Mac OS
+- Due to diff. ML Abc.c is run on Window but not in Linux and Mac OS
+
+- **NOTE**
+- The C and C++ Program are compiled targetting to one particular OS.
+- Hence, the C and C++ programs compiled code contain ML of one particular OS Whose fromat is not understandable to different OS. Hence, C and C++ programs compiled code can not be executed by other OS. Hence, It is called Platform Independent.
+
+- Not only C program PD, But also C SWs is PD becoz, all its Copmponents and PD.
+- Hence, we will have separate C SWs for each OS.
