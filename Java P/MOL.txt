@@ -1,0 +1,435 @@
+Method Overloading Resolution :
+-------------------------------
+When we overload a method then compiler is selecting appropriate method among the available methods based on the following types.
+
+1. Different number of parameters 
+2. Different data type of parameters 
+3. Different sequence(order) of data type of parameters
+
+In case,If compiler can select more than one method then compiler will provide the priority by using following rules :
+
+1) Exact Match Rule
+2) Type Promotion (Widening) Rule
+3) Nearest Type Rule
+4) WAV Rule (Widening - Autoboxing - var args)
+
+----------------------------------------------------------------
+
+Type Prmotion Rule:-------->
+
+byte -> short -> int -> long -> float -> double
+
+char -> int -> long -> float -> double
+
+--------------------------------------------------------------------
+
+
+class Test
+{
+	public void accept(double d) 
+	{
+		System.out.println("double");
+	}
+	public void accept(float d)
+	{
+		System.out.println("float");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(6);
+
+	}
+}
+
+Note : Here float will be executed becuase float is the most specific type.
+---------------------------------------------------------------
+class Test
+{
+	public void accept(int d)
+	{
+		System.out.println("int");
+	}
+	public void accept(char d)
+	{
+		System.out.println("char");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(6);
+	}
+}
+Here 6 is int type so int will be executed.
+---------------------------------------------------------------
+class Test
+{
+	public void accept(int ...d)
+	{
+		System.out.println("int");
+	}
+	public void accept(char ...d)
+	{
+		System.out.println("char");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept();
+	}
+}
+char will be executed becoz char is more specific type.
+---------------------------------------------------------------
+class Test
+{
+	public void accept(short ...d)
+	{
+		System.out.println("short");
+	}
+	public void accept(char ...d)
+	{
+		System.out.println("char");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept();
+	}
+}
+Here we will get compilation error because there is no relation between char and short based on the specific type rule.
+--------------------------------------------------------------
+class Test
+{
+	public void accept(short ...d)
+	{
+		System.out.println("short");
+	}
+	public void accept(byte ...d)
+	{
+		System.out.println("byte");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept();
+	}
+}
+Here byte will be executed because byte is the specific type.
+--------------------------------------------------------------
+class Test
+{
+	public void accept(double ...d)
+	{
+		System.out.println("double");
+	}
+	public void accept(long ...d)
+	{
+		System.out.println("long");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept();
+	}
+}
+
+Here long will be executed because long is the most specific type.
+--------------------------------------------------------------
+class Test
+{
+	public void accept(byte d)  
+	{
+		System.out.println("byte");
+	}
+	public void accept(short s)  
+	{
+		System.out.println("short");
+	}	
+}
+public class AmbiguityIssue {  
+
+	public static void main(String[] args)
+	{
+		Test t = new Test();
+		t.accept(18); 
+		
+	}
+}
+
+
+Here value 18 is of type int so, we can't assign directly to byte and short, If we want, explicit type casting is reqd.
+
+
+---------------------------------------------------------------
+class Test
+{
+	public void accept(int d)
+	{
+		System.out.println("int");
+	}
+	public void accept(long s)
+	{
+		System.out.println("long");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(9);
+	}
+}
+Note : Here int will be executed because int is the nearest type
+--------------------------------------------------------------
+class Test
+{
+	public void accept(Object s)
+	{
+		System.out.println("Object");
+	}
+	public void accept(String s)
+	{
+		System.out.println("String");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(9);  
+
+	}
+}
+
+Here Object will be executed.
+--------------------------------------------------------------
+class Test
+{
+	public void accept(Object s)
+	{
+		System.out.println("Object");
+	}
+	public void accept(String s)
+	{
+		System.out.println("String");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept("NIT");
+	}
+}
+Here String will be executed
+--------------------------------------------------------------
+class Test
+{
+	public void accept(Object s)
+	{
+		System.out.println("Object");
+	}
+	public void accept(String s)
+	{
+		System.out.println("String");
+	}	
+	public void accept(Integer i)
+	{
+		System.out.println("Integer");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(null);
+
+	}
+}
+
+Here We will get compilation error
+---------------------------------------------------------------
+class Alpha
+{
+}
+class Beta extends Alpha
+{
+}
+class Test
+{	
+	public void accept(Alpha s)
+	{
+		System.out.println("Alpha");
+	}	
+	public void accept(Beta i)
+	{
+		System.out.println("Beta");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(null);
+	}
+}
+
+Here Beta will be executed.
+--------------------------------------------------------------
+class Test
+{	
+	public void accept(Number s)
+	{
+		System.out.println("Number");
+	}	
+	public void accept(Integer i)
+	{
+		System.out.println("Integer");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(12);        
+
+	}
+}
+
+Here Integer will be executed.
+--------------------------------------------------------------
+class Test
+{	
+	public void accept(long s)
+	{
+		System.out.println("Widening");
+	}	
+	public void accept(Integer i)
+	{
+		System.out.println("Autoboxing");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(12);        
+    }
+}
+Here widening is having more priority
+--------------------------------------------------------------
+class Test 
+{	
+	public void accept(int ...s)
+	{
+		System.out.println("Var args");
+	}	
+	public void accept(Integer i)
+	{
+		System.out.println("Autoboxing");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(12);        
+     
+    }
+}
+Here Autoboxing will be executed.
+--------------------------------------------------------------
+class Test 
+{	
+	public void accept(Number n)
+	{
+		System.out.println("Number");
+	}	
+	public void accept(Double d)
+	{
+		System.out.println("Double");
+	}	
+}
+public class AmbiguityIssue {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(12);        
+     
+    }
+}
+Here Number will be executed.
+---------------------------------------------------------------------------------------
+class Test 
+{	
+	public void accept(int x, long y)
+	{
+		System.out.println("int - long");
+	}	
+	public void accept(long x, int y)
+	{
+		System.out.println("long - int");
+	}	
+}
+public class MethodOverloading {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(12,12);        
+     
+    }
+}
+
+Here based on method call output OR compilation error will generate.
+---------------------------------------------------------------------------------------
+class Test 
+{	
+	public void accept(int x)
+	{
+		System.out.println("int");
+	}	
+	public void accept(int ...x)
+	{
+		System.out.println("Var args");
+	}	
+}
+public class MethodOverloading {
+
+	public static void main(String[] args) 
+	{
+		Test t = new Test();
+		t.accept(12);        
+     
+    }
+}
+
+Here int will be executed.
+=======================================================================================
