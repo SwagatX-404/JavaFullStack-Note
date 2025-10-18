@@ -1,0 +1,153 @@
+Object Oriented Programming (OOP)
+
+1) Basics (class, object, instance)
+2) Models (SC -> MIs and SC -> MCs -> MIs)
+3) Relations (IS-A, HAS-A, USES-A, O-O, О-М, М-О, М-М)
+4) Principles (Enc, Inh, Poly, Abs, super, VH, MH, OR, OL, etc...)
+5) Java 5, 8, and 10 new features
+6) Coupling, Cohesion and their types [S.O.L.I.D Principles] 6
+7) LC-RP Architecture & Reflection API
+8) Sample project development by using all OOP concepts
+9) Complete list of interview questions and OCJP Bits
+
+-----------------------------------------------------------------------------
+
+🧠 Object-Oriented Programming (OOP) – Complete Syllabus
+**********************************************************
+
+Module 1: Introduction to OOP
+=============================================================================
+
+What is OOP?
+Need and advantages of OOP
+Difference between Procedural and Object-Oriented Programming
+Core OOP components: class, object, instance, method, message passing
+Memory allocation for objects
+
+
+Module 2: OOP Modeling Concepts
+==============================================================================
+
+SC → MIS (Single Class → Multiple Instance Structure)
+SC → MCs → MIs (Single Class → Multiple Classes → Multiple Instances)
+Real-world modeling examples using Java classes and objects
+UML basics (Class Diagram, Object Diagram)
+
+
+Module 3: Relationships in OOP
+===============================================================================
+
+IS-A Relationship (Inheritance)
+HAS-A Relationship (Composition / Aggregation)
+USES-A Relationship (Dependency)
+Association Types:
+One-to-One (O–O)
+One-to-Many (O–M)
+Many-to-One (M–O)
+Many-to-Many (M–M)
+Real-world relationship mapping with Java code examples
+
+
+Module 4: Core OOP Principles
+===============================================================================
+Encapsulation
+Inheritance
+Polymorphism (Compile-time & Runtime)
+Abstraction
+super keyword
+Variable Hiding (VH)
+Method Hiding (MH)
+Overriding (OR)
+Overloading (OL)
+Access Modifiers and their role in encapsulation
+Abstract classes vs Interfaces
+Final keyword (class, method, variable)
+
+
+Module 5: Java-Specific Enhancements
+🔹 Java 5 Features:
+===============================================================================
+Generics
+Enhanced for-each loop
+Autoboxing / Unboxing
+Enum types
+Static import
+Varargs
+
+🔹 Java 8 Features:
+
+Lambda Expressions
+Functional Interfaces
+Stream API
+Default & Static methods in Interfaces
+Method References
+Optional Class
+
+🔹 Java 10 Features:
+
+var keyword (Local Variable Type Inference)
+Enhancements for type safety and cleaner OOP code
+
+
+Module 6: Design Quality Concepts
+===============================================================================
+Coupling and Cohesion
+Types of Coupling (Tight, Loose, Data, Control, etc.)
+Types of Cohesion (Functional, Sequential, Communicational, etc.)
+S.O.L.I.D Principles
+S: Single Responsibility
+O: Open/Closed
+L: Liskov Substitution
+I: Interface Segregation
+D: Dependency Inversion
+Example implementations in Java
+
+
+Module 7: Architecture & Reflection
+===============================================================================
+
+Layered Class–Repository–Presentation (LC–RP) Architecture
+Separation of layers in Java applications
+Data Transfer Objects (DTOs) and Services
+Reflection API
+Accessing class metadata at runtime
+Dynamic object creation and method invocation
+
+
+Module 8: Practical Project Implementation
+===============================================================================
+Develop a Mini Project applying all OOP concepts
+Example Projects:
+Student Management System
+Library Management System
+E-Commerce Cart Module
+
+Apply:
+Encapsulation for data protection
+Inheritance for reusability
+Polymorphism for flexibility
+Abstraction for modular design
+Integrate SOLID principles and reflection where applicable
+
+
+Module 9: Interview Preparation & Certification
+===============================================================================
+OOP Conceptual Interview Questions
+Theoretical & practical examples
+Code snippets for understanding tricky concepts
+Java OOP Interview Questions
+Encapsulation, Polymorphism, Abstraction, etc.
+Access modifiers, static, final, this, and super
+OCJP (Oracle Certified Java Programmer) Bits
+Practice multiple-choice questions
+Common pitfalls and tricky scenarios
+
+
+
+📘 Bonus Resources
++++++++++++++++++++++
+UML diagramming tools (draw.io, PlantUML)
+
+Java documentation (Oracle Docs, Java SE Tutorials)
+
+GitHub practice projects
