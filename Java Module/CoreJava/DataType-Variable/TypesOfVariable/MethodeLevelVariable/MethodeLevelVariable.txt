@@ -1,0 +1,61 @@
+Methode Level Variable
+=======================
+Variable are declared inside Methode,
+    Methode level variable are 2 types :
+                1) Parameter 
+                2) Local Variable
+
+Parameter :
+==============
+A variable declared in methode parenthesis is called Parameter.
+    -> It is used for recieving input from this methode caller
+         for executing this methode this methode logic.
+
+    For Example : Here ' int a and int b ' are Parameter
+
+                static void add(int a, int b){  <--- Methode defination
+
+                }
+
+                add(10,20);  <-- Methode calling
+            //Here 10 and 20 are input to the Parameter
+            //Input are Technically called "Arguments"
+
+Local Variable :
+================
+The Variable are declared ' inside Methode Body ' is called Local Variable.
+ -> It is used to storing value or a result specific to this methode operation.
+               
+                Static void add(int a, int b){
+                    int c = a+b;
+                    //Here ' int c ' is Local variable
+                }
+
+------------------------------
+=> A Parameter and Local Variable gets memory only when their enclosing methode is called in the above 
+   programe add() methode is enclosing method of the parameter a, b & LV c   
+
+=> After methode execution is completed, those Memories are destroyed.
+
+=> A parameter and LV gets memory multiple times, one copy memory evry time when methode is called.
+   Below Program Explains.
+                            1) Creating
+                            2) Calling Methode
+                            3) Allocating multiple times
+//Addition.Java
+
+    Class Addition { 
+        
+        static void add(int a, int b){
+            int c = a+b;
+            sop("Result:" + c);
+        }
+        
+        
+        PSVM( S[] args ){
+            add(10, 20);
+            add(30, 50);
+             
+             sop("main end");
+        }
+    }

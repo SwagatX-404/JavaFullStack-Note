@@ -22,3 +22,18 @@ II) Methode Level Variables
     -> A PVs or a RVs declared inside methode is called "Methode Level Variable"
     -> Accessible only within that method.
     -> LifeSpan - Exists only during method execution.
+
+
+Types of Variable Chart :
+
+                          Types of Variable
+                                  |
+                ----------------------------------
+                |                                |
+        Class Level Variable              Methode Level Variable
+            --------------------          -----------------------
+ Static Variable        Non-Static V     Parameter       Local Variable
+ (p.d, p.p)             (Instance v)            |---------|----------------> Final
+                        (s, f, t, v)
+
+Allowed Modifier ( p.d, p.p,    s,f,t,v)
