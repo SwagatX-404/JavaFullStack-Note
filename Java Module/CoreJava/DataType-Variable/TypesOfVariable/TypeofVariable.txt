@@ -1,0 +1,24 @@
+📘 Variables in Java
+=====================
+Variables are used to store data values in a program.
+In Java, variables are mainly divided into 2 types:
+
+           1) Primitive Variables (PVs)
+           2) Reference Variables (RVs)
+
+Based on Place we declare, Both PVs and RVs are divided in 2 types
+          
+           I) Class Level Variables
+           II) Methode Level Variables
+
+I) Class Level Variables 
+===========================
+    -> A PVs or a RVs declared inside class out side of all methode is called "Class Level Variable"
+    -> Can be used by all methods.
+    -> LifeSpan - As long as the object exists
+
+II) Methode Level Variables
+===========================
+    -> A PVs or a RVs declared inside methode is called "Methode Level Variable"
+    -> Accessible only within that method.
+    -> LifeSpan - Exists only during method execution.
