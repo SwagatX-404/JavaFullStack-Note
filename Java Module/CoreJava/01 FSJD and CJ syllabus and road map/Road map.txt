@@ -1,0 +1,211 @@
+What is the Full Stack Development ?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The process of developing a complete project end-to-end is called FSD.
+    - An end-to-end means from the front-end screens to back-end database tables.
+    - Every projects has 3 parts
+            1) Frontend  (UI screen)
+            2) Middleware  (Programs)
+            3) Back-end    (Database)
+    Ex: amazone.in
+
+What is Full Stack Java Development ?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If we develope a project using Java language and Java frameworks we called FSJD.
+            1) Front-end    (UI)    -> React,
+            2) Middleware   (Programs)  -> Java, SpringBoot,
+            3) Back-end     (Database)  -> Oracle, 
+
+SDLC ( Software Development Life Cycle) -
+=======================================
+    1) Collecting Requirement from client
+    2) Analyzing the Requirement
+    3) Designing the project
+
+    4) Coding         - Development //Coding - UI, Programming, DB
+    5) Unit Testing   
+
+    6) Building       - After Development
+    7) Deploying
+
+    8) Testing 
+    9) Delivering
+    10) Maintainance
+
+Project Architechture_
+=====================
+User interacts with the 
+                          front-end → 
+                        → Front-end sends requests to back-end APIs → 
+                        → Back-end processes logic and queries the database → 
+                        → Response is sent back to the front-end for display.
+
+* Flow Summary: in Project
+
+End-User → UI Input → Controller → Validation → Calculation → Result Generation → Report → DB Tables (store data) → Output/Error shown to user
+
+Java Deeveloper
+===============
+A Java Developer is a software professional 
+who designs, develops, and maintains applications using the Java programming language.
+        Develope :
+                    backend systems, 
+                    web applications, 
+                    desktop software,
+                    mobile apps 
+        using Java technologies
+Key Responsibilities:
+--------------------
+Writing clean and efficient Java code.
+Developing and maintaining backend logic using frameworks like Spring Boot or Hibernate.
+Connecting applications to databases (MySQL, Oracle, MongoDB, etc.).
+Testing, debugging, and optimizing application performance.
+Collaborating with front-end developers and other team members.
+
+Olden days we have 3 developer 
+    1) Web Designer
+    2) Web Developer
+    3) PL/SQL Developer
+
+Now a days we have only 1 Developer - Full Stack Developer - UI, Programming, Database
+
+Full Stack Java Development Syllabus
+====================================
+In every project we can perform 2 kind of operations
+    1) Development
+    2) After Development [buid,deploy,test,...]
+
+Every project has 3 parts.
+    1) UI
+    2) Programming
+    3) Database
+
+All Java Development Course are divided into 5 module.
+    1) Java Module
+    2) Database Module
+    3) UI Module
+    4) DevSecOps technologies
+    5) AWS Basics
+
+Course for Developing Full Stack Java Project
+    Java Module:
+        1. Core Java
+        2. Adv. Java
+        3. Spring
+        4. SpringBoot
+        5. Microservices
+
+    Data Base
+         Oracle
+          1. SQL
+          2. PL/SQL
+
+    UI Module
+        1. HTML
+        2. CSS
+        3. Java Script 
+        4. Bootstraps
+        5. React Js
+
+Course for after development operations [building, deploying, testing...]
+    DevSecOps Tools
+        1. Git, GitHube
+        2. Maven, Gradle
+        3. Log4J, SLF4J
+        4. Junit, Mokito, Jmeter, Jira
+        5. Jenkins, Docker, Kafka, etc...
+
+    AWS Basics
+        1. Installing Web Server
+        2. Installing Database
+        3. Deploying Project
+        4. Running Project
+        5. Provide Project Access to client
+
+Full Stack Java Learning Road Map
+-----------------------------------
+We can learn Full Stack Java courses in 2 modes
+Duration:
+
+1. Sequentially
+- one course after another course (1+ yrs)
+
+2. In parallel
+per day [2 or 3] courses (6+ months)
+
+    Level #1:
+    Core Java + Oracle + HTML, CSS, JS [2-3 months]
+
+    Level #2
+    Adv Java + DevOps Tools AWS [1 month]
+
+    Level #3:
+    Spring, SpringBoot, Microservices + React JS [3-4 months]
+
+                    JOB search
+Different FSD:
+End-user: Frontend & backend
+            Frontend-UI
+                ->HTML, CSS, JavaSCript, Bootstrap, React etc..
+
+            Backend
+                -> Java + SpringBoot + Oracle   - Full Stack JAVA 
+                -> Python + DJango + + MySQL    - Full Stack Python
+                -> C#.NET + ASP.NET + SQLServer     - Full Stack .NET Core
+                -> Express JS + Node JS + MongoDB   - MERN Stack Node Js
+                -> Python + [DS, ML, AI] + MongoDB  - Full Stack Data Science
+
+FSJ Tree Diagram:
+       > Core Java - AJ - SpringBoot
+            - Android
+            - Object C ios
+            - Saleforce
+            - SAP/ABAP
+            - Oracle Forms
+            - Hadoop Spark Scala
+
+            - .NET
+            - PHP
+            - Python
+            - PEGA
+            - Selenium
+            - DataScience ML, DL, AI, into
+
+Diffrenece between FS java, java and Core java ?
+    FS java Developer - The skill required to develope one complete project
+    Java Developer - Only coding, No-Frontend UI, No-Backend
+    Core Java Developer - Just language
+
+Diffrence Java and Python ?
+    Java -
+    Buisness applications 
+    [5th std math] 
+    OPP style Enterprise app, complete proj - Frontend, middlewear, backend. ex- Youtube app
+
+    Python - 
+    Math based applications 
+    [Linear algebra, Statistic]
+    Scripting style program - DS, ML,AI. Data Analyzer and recommandation app system video recommandations.
+
+Core Java Syllabus
+==================
+In Core Java we will learn 'programming' by using Java
+In Core Java we will learn
+
+    1. Math based programs:
+        Clike add, sub, mul, div, %, palindrome, factorial, patterns, etc...
+
+    2. Business based programs:
+        like deposit, withdraw, transferAmt, book Ticket, buy, sell, etc...
+
+    3. Data Structures and Algorithms:
+        Llike searching, sorting, inserting, removing, replacing, etc...
+
+For learning above programs easily :
+
+    - Core Java syllabus is divided into 5 units
+
+            Unit #1: Java Fundamentals
+            Unit #2: Logical Programming
+            Unit #3: Object-Oriented Programming
+            Unit #4: Java Library (API)
+            Unit #5: Project Development (MVC based)
