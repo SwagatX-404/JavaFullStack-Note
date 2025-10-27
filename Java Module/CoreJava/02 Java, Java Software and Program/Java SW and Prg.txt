@@ -1,0 +1,255 @@
+Types of applications:
+======================
+    1) Stand Alone Application -> Server System[ Program<-Local call ]     <--Not Network Call--- [Remote System]
+
+    2) Internet Application -> Server System[ Program<-Local call ]    <--Network Call--- [Remote System]
+
+Platform:
+=========
+    [Program] ----SW+HW----> (Platform)---->O/P
+
+        [C/C++Program] ----OS----> (Platform)---->O/P
+        [Java Program] ----OS{JVM---->(Platform)}-------->O/P
+        [>NET Program] ----OS{CLR---->(Platform)}-------->O/P
+        [HTML Page] ----OS{(Browser)}-------->O/P
+
+Platform Dependency:
+===================
+    Window OS [Program(C/C++)]  => Windows OS = O/P ✓
+                                => Linux OS = O/P ✕
+                                => Mac OS = O/P ✕
+                                => Solaris OS = O/P ✕
+
+Platform Independency:
+===================
+    Window OS [Program(Java)]  => Windows OS[JVM] = O/P ✓
+                                => Linux OS[JVM] = O/P ✓
+                                => Mac OS[JVM] = O/P ✓
+                                => Solaris OS[JVM] = O/P ✓
+
+C, C++ Platform Dependency(PD) architecture:
+==============================================
+    Windows[ file.c -> Windows C - Compiler -> file.obj(ML of Windows) -> Linker -> file.exe = O/P]
+    Linux[ file.c -> Linux C - Compiler -> file.obj(ML of Linux) -> Linker -> file.exe = O/P]
+    Mac [ file.c -> Mac C - Compiler -> file.obj(ML of Mac) -> Linker -> file.exe = O/P]
+
+    C S/w => PD
+                Compiler => PD
+                Linker => PD
+                Library => PD
+
+Java Platform Independency(PI) architecture :
+===========================================
+    +-----------------------------------------------------+
+|       Java Compilation and Execution Process         |
++-----------------------------------------------------+
+
++----Any OS---------+
+|    Any Platform   |
++-------------------+
+| file.java         |
+|   |               |
+|   v               |
+| Java Compiler     |
+| (javac)           |
+|   |               |
+|   v               |
+| file.class        |
+| (Bytecode)        |
++-------------------+
+
++-------------------+
+|    Windows        |
++-------------------+
+| file.class        |
+|   |               |
+|   v               |
+| Windows JVM(gen-ML|
+|   |               |
+|   v               |
+| OS Execution (O/P)|
++-------------------+
+
++-------------------+
+|    Linux          |
++-------------------+
+| file.class        |
+|   |               |
+|   v               |
+| Linux JVM (gen-ML |
+|   |               |
+|   v               |
+|OS Execution (O/P) |
++-------------------+
+
++-------------------+
+|    Mac            |
++-------------------+
+| file.class        |
+|   |               |
+|   v               |
+| Mac JVM (gen-ML   |
+|   |               |
+|   v               |
+|OS Execution (O/P) |
++-------------------+
+
+Java program development, compilation and execution procedure :
+================================================================
+
+        In the Java programming language, all source code is first written 
+        in plain text files ending with the ".java" extension.
+
+        Those source files are then compiled into ".class" files 
+        by the javac compiler.
+
+        A ".class" file does not contain code that is native 
+        to your processor; it instead contains bytecodes the native language of the Java Virtual Machine.
+
+        The java launcher tool then runs your application 
+        with an instance of the Java Virtual Machine.
+ FLOW:
+            Program.java ----> Compile ---> Program.class ---> [JVM] --0100101...---> Program(O/P)
+
+Important facts on Java program and Java software :
+=====================================================
+
+    1. Java Slogan: WORA-Write Once Run Anywhere
+
+    2. Compiler is responsible to take Java source code, verifies syntaxes, 
+        if no errors convert source into bytecode and saving this bytecode 
+        in a separate new file with ".class" extension with class name as file name.
+
+    3. JVM is responsible to take Java bytecode, execute this bytecode by converting it
+         into current OS ML. After execution generated ML is destroyed.
+
+    4. Java supports only 2 extension files .java and .class.
+
+    5. In Java we do not have a file with machine language code
+       means Java does not support.exe file, because it is platform dependent, 
+       it is not safe, easily effected by virus, and more over always compiled code is 
+       downloaded from server, hence ML code saved in client system is useless.
+
+    6. Java compiler is OS independent because both input and output files source code and bytecode 
+       are Java related files.
+
+    7. JVM is OS dependent, because it should generate OS dependent ML from the given bytecode.
+
+    8. Java software contains
+            Compiler + JVM + API 
+            where, Compiler - PI, JVM - PD, API - PI/PD
+
+    9. Java software is platform dependent because JVM is platform dependent. Because Java Software 
+       is platform dependent, we will have separate Java software for every OS. Hence based on 
+       our system OS and processor we must download and install Java software
+
+    10. Java program is platform independent and Java software is platform dependent, both because of JVM.
+
+            ➤ java program platform independent, because JVM is available for every OS, so Java program can be executed in all OS
+
+            ➤ Java software is platform dependent, because we have separate JVM for every OS, so the same Java software can not be installed on all OS.
+
+    11. For all OS, JVM is developed by SUN(Oracle), but not by OS Vendors. So, JVM will not be installed inbuilt along with OS installation.
+        We must install JVM explicitly in our computer after OS installation.
+
+    12. Programmer is responsible for developing, compiling and executing a Java program, Whereas
+
+    13. Customer/Client is responsible for only executing Java program.
+
+    14. Based on programmer and customer responsibilities Java software is divided into two types
+
+Types of Java SWs :
+===================
+    Java S/Ws :  1) JDK   -> JDK ( Compiler + JRE { JVM + API })
+                 2) JRE   -> JVM + API
+
+NOTE : In JAVA 11v public JRE is Removed coz they have now HTML, CSS, Js for Client before they java Applete
+
+Modern Web APP : 
+================
+====================================================================
+                   🌐 MODERN WEB APPLICATION ARCHITECTURE
+====================================================================
+
+                    +---------------------------+
+                    |       CLIENT COMPUTER      |
+                    |---------------------------|
+                    |   Browser (Chrome, Edge)   |
+                    |       ↓                    |
+                    |   UI Layer (HTML, CSS, JS) |
+                    |---------------------------|
+                    |   OS (Windows/Linux/macOS) |
+                    +---------------------------+
+                                 |
+                                 |  HTTP / HTTPS Request
+                                 ↓
+                   +---------------------------+
+                   |       NETWORK (Internet)   |
+                   +---------------------------+
+                                 |
+                                 ↓
+                    +----------------------------+
+                    |        SERVER COMPUTER      |
+                    |----------------------------|
+                    |   UI Layer (HTML / JSP)     |
+                    |   Backend Logic (Servlets,  |
+                    |   Spring Boot, etc.)        |
+                    |----------------------------|
+                    |   Database (MySQL / Oracle) |
+                    |----------------------------|
+                    |   JDK Installed (for Java)  |
+                    +----------------------------+
+                                 |
+                                 ↓
+                    +----------------------------+
+                    |   Sends HTML Page Response  |
+                    +----------------------------+
+
+====================================================================
+🔹 No need for JRE on client side
+🔹 Browser directly renders HTML/JS pages
+🔹 All Java code executes on the Server (inside JDK)
+🔹 Database stores and retrieves application data
+====================================================================
+====================================================================
+                 ☕ OLD JAVA APPLICATION WITH APPLETS
+====================================================================
+
+                    +---------------------------+
+                    |       CLIENT COMPUTER      |
+                    |---------------------------|
+                    |   Browser (e.g., IE, Netscape) |
+                    |           ↓                |
+                    |   UI (Java Applet)         |
+                    |   → Applet executes inside |
+                    |     the browser using JRE  |
+                    |---------------------------|
+                    |   OS  +  JRE Installed     |
+                    +---------------------------+
+                                 |
+                                 |   Network (N/W)
+                                 ↓
+                    +----------------------------+
+                    |       SERVER COMPUTER       |
+                    |----------------------------|
+                    |   UI (Applet / JSP / HTML)  |
+                    |   Programming Logic         |
+                    |   (Servlets / Java Classes) |
+                    |----------------------------|
+                    |   Database (Oracle/MySQL)   |
+                    |----------------------------|
+                    |   JDK Installed (for Java)  |
+                    +----------------------------+
+                                 |
+                                 ↓
+                    +----------------------------+
+                    |   Sends Applet bytecode to  |
+                    |   client browser for exec.  |
+                    +----------------------------+
+
+====================================================================
+🔹 Client must have JRE installed to run Applets
+🔹 Applet code runs inside browser on client machine
+🔹 Java program logic is partly on server and partly on client
+🔹 Communication happens via network (N/W)
+====================================================================
