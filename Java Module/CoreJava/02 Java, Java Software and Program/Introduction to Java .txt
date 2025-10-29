@@ -270,7 +270,7 @@ Introduction to Java
 	  8. Inner classes	-> for representing inner object of an outer object	
 	=================================================================================
 
-	A Java program = Modules → Packages → Classes → Variables + Methods + Constructors + Blocks + Inner Classes
+	A Java program = Modules → Packages → Classes → (Variables) + (Methods) + (Constructors) + (Blocks) + (Inner Classes)
     Each element plays a part in building, organizing, and executing the program.
 
         1. Module	Used to group packages together. It helps organize large applications into smaller, manageable parts.
