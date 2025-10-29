@@ -1,0 +1,176 @@
+Comments and Java Tokens with Java 1.0v to Java 22v New features
+==================================================================
+
+1) What is comment, types of comments, programs, FAQS
+2) What is identifier, types of identifiers, rules, FAQs
+3) What is keyword, diff operations, keywords list, FAQs
+4) newly added keywords
+1) We have 51 keywords, 3 literals
+2) 10 restricted keywords, 7 special identifiers
+3) We have 71 reserved words in total
+5) What is a reserved word, number of reserved words diff between reserved word and keyword?
+6) What is a Java tokens, types of tokens
+7) What is a separator, number of seperators
+8) What is the "var", "yield", "record" what is the use of it,
+
+Comment, types of comments
+==============================
+
+What is a comment?
+Why comment?
+How many comments?
+Pupose of each comment?
+Sample program?
+Compiler algorithm in compiling comments?
+Interview questions?
+Where are we allowed to palce comments?
+4 CEs we will get while working with comments?
+
+
+Comment and types of comments
+==================================
+
+1) A comment is special syntax using which we can inform to comipler 
+    some part of the code no need to compile. and also using comment
+    we can provide description to a programming element or a statement 
+    for other programmer or only for us to understand it in future
+    ======================
+
+2) We have three types of comments
+====================
+        1) Single line comment -> //
+        2) Multi line comment -> /* */
+        3) Document comment -> /** */
+
+3) Single line and multi line comments are meant for commenting programming elements and statements where as document commnet is meant for providing description or documentation for programming element
+=============
+
+Comment and types of comments
+================================
+/**
+
+        * This class is used for adding given numbers
+        * and returns the result.
+        * author: HK
+        * version: 1.0
+        * client: Naresh i Technologies
+
+*/
+
+public class Addition {
+
+/*
+
+            * This method will add given two intergers
+            * returns result.
+
+*/
+
+            public int add(int p, int q){
+
+            // adding given numbers and returing result
+             return p + q;
+    }
+}
+
+4) we must use
+================
+        1) SLC -> for commenting one line -> Ex: var/Sopln()
+        2) MLC -> for commenting mul lines-> Ex: meth stmts
+        3) Doc C -> for providng description to be present in documentation file.
+        5) The statments placed inside comments are not placed inside .class file,
+             because the statements placed inside comment are meant ignoring compilation.
+        6) Hence the variables and the methods placed inside comments we can not access.
+             If we access a variable or a method which is placed inside comment, compiler will throw error.
+
+
+Identify valid comments from the below list
+============================================
+1.//
+2.///////////////////////////
+3./* */
+4. /* // */
+5./* */
+6./*
+7.///*
+8. */
+9./* /* */
+10./* */*/
+11./* /* */ */
+12./* /* */ */
+
+
+7. In a java file, where are we allowed to place commnet
+=======================================================
+
+We can place comment any where in a java file
+
+1) we can place in source file directly
+2) we can place inside a class
+3) we can place inside a method
+4) and even we can place inside a class/method/variable name, but with care
+
+    For example:
+
+        Comments java
+
+            //source file level comment
+
+            class Example {
+
+            //class level comment
+
+            void m1(){
+
+            //method level comment
+
+            }
+        }  
+
+
+We can use comment in PE name also, but with care
+======================
+
+ 1.   class Ex//ample {   }       wrong
+
+ 2.   class Ex//ample{            wrong
+    }
+
+ 3.   class Ex//ample                   correct
+    {
+
+    }
+
+ 4.   class Ex/*ample*/{                correct
+        
+    }
+
+                    >javac Example.java
+                    >Ex.class
+
+ 5.   class Ex/*ample*/Sa {       wrong due to Sa'
+
+    }
+
+
+
+Four compile time error w.r.t comments
+======================================
+
+Example.java
+
+→ /*  */   */    CE: c, i or e expected   - wrong
+
+
+        class Example {
+
+        →/* */ */ CE: illegal start of type   - wrong
+
+        void m1() {
+        /* /* */ CE: illegal start of expression  - wrong
+
+        /*  CE: unclosed comment - wrong
+
+        }
+
+    }
