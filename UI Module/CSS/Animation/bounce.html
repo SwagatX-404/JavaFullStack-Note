@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* custom animation for bouncing text up & down.
+		  you can change % values*/
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="bounce">Bounce Animation</h1>
+    <div class="bounce">Swagat</div>
+
+    <svg class="bounce" height="100" width="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+
+</body>
+
+</html>
