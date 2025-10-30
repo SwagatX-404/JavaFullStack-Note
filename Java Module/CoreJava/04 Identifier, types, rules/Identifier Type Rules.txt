@@ -1,0 +1,112 @@
+Identifiers with Java 9 enhancements
+========================================
+
+1) What is an identifier?
+2) Why identifier?
+3) If we create a cls/var/meth without name, what will happen?
+4) Rules in creating an identifier?
+5) Java 9 added change in idenfiers?
+6) Identify valid identifiers in the below list?
+7) Interview questions and OCJP bits?
+
+
+Idenfiers, types, rules and OCJP bits
+========================================
+
+1. A name of a programming element is technically called identifier. Identifier is used for identifying or finding a PE from other parts of the program or project.
+
+    for example:
+
+            class Example { ←
+            int x = 10;
+
+            void m1(){
+            System.out.println("Hi");
+            }
+
+            }
+
+                class Test {
+
+                ps v main(S[] a)
+                {
+
+                Example e1 = new Example().
+                Sopin(e1.x);
+                e1.m1();
+                }
+             }  
+///// Identifiers : Example, {, x, 10, m1, {, System, out, println,} }
+
+
+Identifier, types, rules and OCJP bits
+========================================
+
+Is below compiled?
+
+        class <identifier>{
+            int <identifier> = 10;
+
+            void <identifier> (){
+
+            }
+        }
+        ///////    CE: <identifier> expected
+
+
+Identifier, types, rules and OCJP bits
+=========================================
+Different Identifiers or types of identifiers
+////All Are " name "  type identifiers
+
+        1) module      -    name
+        2) package      -    name
+        3) interface      -    name
+        4) abstract class      -    name
+        5) concrete class      -    name
+        6) final class      -    name
+        7) enum      -    name
+        8) annotation      -    name
+        9) record      -    name
+        10) variable      -    name
+        11) method      -    name
+        12) lable      -    name
+        13) generic parameter      -    name
+
+
+Identifier, types, rules and OCJP bits
+=======================================
+1) An identifer can contain
+            1) alphbets (A-Z, a-z)
+            2) digits (0-9)
+            3) and special characters only $ and _
+
+2) An identifer can not start with digit, but it can be used from second position onwards
+3) An identifier can not contain special characters except $ and
+4) From Java 9 onwards we can not create identifer just with'_', but it is allowed upto Java 8 version
+5) An identifier can not contian space in the middle of characters
+6) In Java Identifier is case sensitive (a != A)
+7) Reserved words and keywords can not be used as
+
+        NOTE :  But we can use predefined class name, methode as user defined identifier,
+                and also there is no limit in identifier lenth
+
+
+Identifier, types, rules and OCJP bits
+========================================
+Identify valid identifiers in the below list
+
+        1) abc
+        2) abc123$_
+        3) 234Abc           ---> wrong 2
+        4) $$_$$$____$$
+        5)_                 ---> wrong one _ is wrong if __ or more ____ is correct coz jav9 onward it is KW
+        6)_____
+        7)_abc
+        8)_123
+        9) main
+        10) Class       <-- Closely look it capital C, to it is not a keyword, Java identifiers is Case Sensitive
+        11) static          ---> wrong static is keyword
+        12) String  
+        13) No#1Student    ---> wrong  #
+        14) MCA Student     ---> wrong  spece 
