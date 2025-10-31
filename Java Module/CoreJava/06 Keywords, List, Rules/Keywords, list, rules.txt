@@ -1,0 +1,271 @@
+Keyword, Rules, List of KWs, Java 9 ench
+===========================================
+
+1) A predefined identifier that has special meaning in java program
+     outside comments and strings is called a keyword.
+2) A keyword is a reserved word that performs one unique operation in a java program.
+3) What are the diffrence between reserved wprd and keyword ? Can we call a keyword is a reserved word ?
+
+          Every keyword is a reserved word,
+          but every reserved word is not a Keyword.
+     For example:
+          null is a resrved word , but not a keyword.
+          class is a reserved word and also a Keyword.
+
+     A reserved word that got implemented logic to perform one operation in java program is called keyword.
+
+
+Rule: We have two rules on keyword
+===================================
+
+     1) We can not use a keyword as user defined ident
+     2) We must use keyword with all its characters lower case, because every keyword is defined with all characters lower case.
+
+4) A keyword is used for communicating to compiler and JVM to perform one speical operation in our program.
+     for example:
+
+               class Example { 
+                    static int a = 10;
+
+               }
+
+          In this program we have used three keywords
+          1) By using class we are informing to compiler and jvm create Example as a class type program
+
+5) Below are the 10 operations we will perform in a Java file by using keywords
+====================================================================
+          1) package creation and usage
+          2) class creation
+          3) variable and method creation
+          4) memory allocation
+          5) controlling execution flow
+          6) setting access level permissions
+          7) setting execution level permissions
+          8) establishing inheritance relationship
+          9) representing object and its members
+          10) handling user mistakes
+
+
+6) to perform above 10 operation Java supports 51 kws
+
+7) Amoung all those 51 keywords
+===================================
+          1) In Java 1.0 we have 47 keywords
+          2) In Java 1.2v we got new keyword "strictfp"
+          3) In Java 1.4v we got new keyword "assert"
+          4) In Java 5v we got new keyword "enum"
+          5) In Java 9v we got new keyword "_"
+
+8) 51-53 Java Keywords & Concepts Summary
+==========================================
+1. Program Structure & Definition
+====================================
+Used to define the basic structure of a Java program.
+
+    Package & Import:
+
+        package - Declares a package.
+        import - Imports a package or class.
+
+    Type Declaration:
+
+        class - Defines a class.
+        interface - Defines an interface.
+        enum - Defines a set of constants (from Java 1.5).
+
+2. Data Types & Return Types
+================================
+Used to declare variables and specify what a method returns.
+
+    Primitive Data Types:
+
+        byte, short, int, long (Integer types)
+        float, double (Floating-point types)
+        char (Character type)
+        boolean (True/False type)
+
+    Return Type:
+
+        void - Indicates a method does not return a value.
+
+3. Memory Allocation & Object Creation
+============================================
+Used for memory management and creating objects.
+
+    new - Creates new objects (instances) in memory.
+    static - Allocates memory for a member only once, at the class level.
+
+4. Control Flow Statements
+==============================
+Used to control the flow of program execution.
+
+    Conditional (Decision Making):
+
+        if, else
+        switch, case, default
+
+    Looping (Iteration):
+
+        while
+        do
+        for
+
+    Branching (Jumping):
+
+        break - Exits a loop or switch.
+        continue - Skips to the next iteration of a loop.
+        return - Exits a method, optionally returning a value.
+
+5. Access Modifiers
+=====================
+Define the visibility/access level of classes, methods, and variables.
+
+    private - Accessible only within its own class.
+    protected - Accessible within its package and by subclasses.
+    public - Accessible from any other class.
+    default (no keyword) - Accessible only within its own package.
+
+6. Non-Access Modifiers
+=============================
+Provide other functionality and control, besides access.
+
+    static - Belongs to the class, not individual objects.
+    final - Makes a variable constant, or prevents a method/class from being overridden/inherited.
+    abstract - Used for abstract classes and methods that must be implemented by a subclass.
+    native - Indicates a method is implemented in platform-native code (e.g., C/C++).
+    transient - Prevents a variable from being serialized.
+    volatile - Ensures a variable is always read from and written to main memory.
+    synchronized - Controls thread access to a method or block.
+    strictfp - Ensures consistent floating-point calculations across platforms.
+
+7. Inheritance & Polymorphism
+==================================
+Used to establish relationships between classes and interfaces.
+
+    extends - A class inherits from another class.
+    implements - A class implements an interface.
+
+8. Object & Member Representation
+======================================
+Used to refer to the current object, its parent, and type checking.
+
+    this - Refers to the current object.
+    super - Refers to the parent class object.
+    instanceof - Checks if an object is an instance of a specific class.
+
+9. Exception Handling
+========================
+Used to handle runtime errors and exceptions.
+
+    throw - Explicitly throws an exception.
+    throws - Declares exceptions that a method might throw.
+    try - Block of code to be tested for errors.
+    catch - Block of code to handle the error.
+    finally - Block of code that executes regardless of an exception.
+    assert - Used for testing and debugging assumptions (from Java 1.4).
+
+10. Literals  (Reserved Word)
+===================
+Fixed values assigned to variables.
+
+    Boolean Literals: true, false
+    Null Literal: null
+
+11. Reserved but Unused Keywords
+===================================
+Keywords that are not used in current Java.
+
+    goto - Not used (reserved keyword).
+    const - Not used (use final instead).
+
+12. Java 9 new Keyword (Reserved Keyword)
+===========================================
+     _  <_underScore>
+
+
+The 10 restricted keywords for Java 9 module system
+=====================================================
+
+     module <module.name> {
+
+               requires----------------transitive
+               exports-------------to
+               open
+               opens-------------------to
+               provides--------------with
+               uses
+     }
+
+These 10 words are called as restricted keywords because 
+     these words are considered as keywords only in module programming. 
+     Inside class we can use these 10 words as user defined identifiers
+
+
+Special Identifiers or Restricted Identifiers (7)
+===================================================
+65. var                  (Java 10)
+                         Preview  Permanent
+
+66. yield                (Java 13 -> -> Java 14)
+
+67. record               (Java 14 -> 15 \to Java 16)
+
+68. sealed               (Java 15 -> 16 \to Java 17)
+
+69. non-sealed           (Java 15 -> 16 \to Java 17)
+
+70. permits              (Java 15 -> 16 \to Java 17)
+
+71. when                 (Java 19 -> 20 \to Java 21)
+
+Above These 7 words are not keywords or not reserved words, we can use them as user defined identifiers
+
+yield :
+record :
+these words are called as special identifiers or restricted identifiers because 
+     these words has some special meaning in some part of the code
+
+For example:
+     In a variable creation the identifier 'var' can be used as data type and can be used as variable name as below
+          var var = 10;
+
+     var: here it is data type
+     var: here it is just variable name
+
+Summary.number of KWs and RWs as per Java version
+===============================================
+Version             KWS            RWs
+
+Java 8v             50             53 (50+3)
+
+Java 11v            51             65(51+3+10+1)
+
+Java 17v            51             70(51+3+10+6)
+
+Java 21v            51             71(51+3+10+7)
+
+→In the new versions, new words are provided as reserved identifiers,
+  but not as a keywords, for providing backward compatiblity and for avoiding compile time errors
+  if these words are used as identifiers in the project
+
+
+Identify valid key words in the below list?
+===========================================
+Term           Status              Category            Notes
+=====          ======              ========           ========
+static    	✅ Valid	          Keyword        	Modifier
+main	          ⚠️ Contextual	      Method	           Application entry point
+public	     ✅ Valid	          Keyword	          Access modifier
+class	     ✅ Valid	          Keyword	          Type definition
+synchronized	✅ Valid	          Keyword	          Modifier for threads
+interface	     ✅ Valid	          Keyword	          Type definition
+enum	          ✅ Valid	          Keyword	          Enumeration type
+for	          ✅ Valid	          Keyword	          Loop control
+instanceof	✅ Valid	          Keyword	          Type comparison
+null	          ✅ Valid	          Keyword	          Null literal
+module	     ⚠️ Contextual	      Keyword (Java 9+)	 Module system
+requires	     ⚠️ Contextual	      Keyword (Java 9+)	 Module directive
+Default	     ✅ Valid	          Keyword             code to run if no case matches switch expression.
+sizeof	     ❌ Invalid	          Not in Java	     C/C++ keyword
+marker	     ❌ Invalid	          Not a keyword	     A concept (marker interface)
+to, with	     ❌ Invalid	          Not keywords	     May be from other languages
