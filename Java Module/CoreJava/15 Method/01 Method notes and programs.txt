@@ -1,0 +1,342 @@
+Method and Types of Methods
+================================
+
+01) Need of this chapter?
+02) What is a method and Why method?
+03) How to create a method?
+04) Method creation terminology?
+05) Method declaration, definition, invoking, impli,ovr,ovl,hid?
+06) Sample programs as per maths and business?
+07) When should we create method?
+08) Where can we create method?
+09) Types of methods?
+10) Use of abstract methods and concrete methods?
+11) Use of static and non-static methods?
+12) Use of private and non-private methods?
+13) Use of void and non-void methods?
+14) Use of parameterized and non-param methods?
+15) PPT & RPT, PRT&RRT methods and diff?
+16) Diff in using PDT, inter, AC, CC, FC as RT and param
+17) Rules in placing logic?
+18) Diff blocks and logics exist in Java and their diffs?
+19) Where should we place init logic and blogic & why?
+20) Sample projects, Interview and OCJP FAQs?
+
+
+    class BankAccount{
+        String bname;
+        String brname;
+        String ifsc;
+        long accnum;
+        String acchname;
+        double balance;
+    }
+
+    class Bank{
+        psvm (s[] args){
+            BankAccount acc = new BankAccount();    //acc[1010] -> bname, brname, ifsc etc...
+            --
+            ---
+            // How many uDM ? - as many diff operation our own user defined methode with the required logic 
+                1. Perform operatios 
+                    storing data in vars or in obj.
+                2. reading the values from obj and performing vals and calls
+                3. printing the object values on console.
+
+        }
+    }
+
+To perform different operations on the object, we must develop logic, where we develop logic?
+A) in side a methode - by default inside main method.
+
+What is the problem with main method?
+    - The logic placed inside main methode redundant
+    - Means we must place same logic again for each object repeatedly.
+    - solution: we must place the logic one time and call and execute it repeatedly for each obj or vals separately.
+       
+
+What is the need of this chapter?
+=====================================
+- In this chapter we will learn creating user defined method 
+    for developing reusable logic for performing one operation
+
+that operation can be
+====================
+    1. a mathematical operation
+    --------------------------
+        like- addition, subtraction, multiplication, etc...
+
+    2. a business object operation
+    -------------------------------
+        like- deposit, withdraw, book Ticket, buy, sell, etc...
+
+In the previous chapter in P and LV topic
+------------------------------------------
+we have created one user defined method add() for performing addition operation for given set of new values
+That logic in add() method is reusable logic for any given new set of values
+
+
+
+Q) What is a method? & What is the use of a method?
+=====================================================
+A sequence of statements placed as one group with proper name and return type is called
+method.
+
+class Addition {
+
+        void add() {
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+        S.o.pln(c);
+    }
+}
+
+    - A method is a sub block of a class that has name and return type.
+    - A method is used for implementing logic to perform one operation
+
+The operation may be mathematical operation or
+may be business object operation
+
+
+Examples for
+...................
+Mathematical operation method
+.................................
+        class Addition {
+
+                static int add(int a, int b){
+
+                return a + b;
+
+            }
+
+        }
+
+        Business operation method
+......................................
+        class BankAccount{
+
+                private double balance;
+
+                void deposite(double amt){
+
+                balance = balance + amt;
+                }
+        }
+
+
+How to create a method?
+=================================
+
+1) What is an operation?
+2) What are the inputs needed to perform this operatin?
+3) What is the logic to perform this operation?
+4) What is type of result returning from this operation?
+5) What is the exception throwing from this operation?
+6) What are the permissions we must set to access and execute this operation?
+
+    modifier return type methName(parameter-list)
+                        throws <exception-list>
+    {
+            ----logic----
+    }; //;optional
+
+
+    public static void Meth1(int a, String s){
+        sopln(a+s);
+    }
+    void meth2(){
+
+    }
+    abstract void meth3();
+
+
+Rule in creating a method without body and need of abstract keyword,
+========================================================================
+    1. we must end this method with; and
+    2. we must declare this method with the modifier abstract
+    3. we must also declare class as abstract
+
+- To a method, by applying abstract modifier, we are telling to the compiler 
+    this method does not have body in this class, it will have body and implementation in the sub class of this class.
+
+- To the class, by applying abstract modifier, we are telling to the compiler, 
+    this class contains abstract method, do not allow creating object from this class because the abstract method 
+    available in this class can not be executed from this class itself.
+
+
+Method Terminology:
+======================
+
+1) prototype
+2) Body and logic
+3) Signature
+4) Parameter and argument
+5) Method name
+6) Return type
+7) Modifier(AM and ELM)
+8) Exceptions list
+
+Method creation terminology:
+=============================
+
+1) method declaration
+2) method definition
+3) method invoking/calling
+4) method implementation
+5) method overriding
+6) method hiding
+7) method overloading
+8) overridden method overriding method
+9) Hidden method hiding method
+10) overloaded method overloading method
+11) calling method called
+
+
+Prototype
+===============
+: The head protion of the method that contains modifiers,
+     return type, method name, parameters and throws exceptions list is called prototype
+
+Body:
+===============
+Just the place between { } is called body
+
+Logic:
+=============
+The statements placed in method body is called logic
+
+Signature:
+================
+Method name and parameters list together we called signature.
+
+Paramter :
+================
+: The variable that is declared in method parathesis () is called parameter.
+
+Argument:
+============
+The value we are passing as input to a method parameter is called argument
+
+
+
+Method name: The name of a method that represents an operation performed by this method is called method name
+============
+Return type: A data type placed in method prototype before
+=============
+method name is called return type. The return type is used for specifying what type of value is returning from this method. If we do not want to return a value, we must use void as return type
+
+throws exceptions list:
+========================
+ exception list represents the run time error that can be occured from this method, if we pass wrong values.
+
+Modifiers: 
+================
+A keyword or set of keywords those modifiers default behaviour or operation of 
+    a programming element is called modifier. The AM specifies where we can access
+    this PE and the ELM specifies how we can access and how we can execute this PE,
+    either with object or directly by class name.
+
+Develop a program with a method to show all above parts:
+=========================================================
+            class Addition{
+                public static void add(int a, int b)
+                {
+                    int c = a+b;
+                    sop(c);
+                }
+            }
+
+            // Addition.add(30,12);
+
+//prototype
+ public static void main( String [] args)   //AM, ELM, RT, MN, (Parametertype(str), parametername(args) ) -parameter signature  
+                    throws exception
+//Body
+        {
+            sopln("Hi");  //logic
+        }    
+
+
+        //main(new String[0]);   // argument-String[0]
+
+
+Method declaration (abstract method)
+========================================
+
+If we create a new method without implementation body, with only prototype, we call it as method declaration.
+Method declaration is also called as abstract method.
+
+An abstract method must ends with; and must contain the modifier abstract, 
+else compiler will throw error.
+
+Syntax:
+    AM abstract RT MN(param-list)  throws EL;
+
+        Ex:
+        public abstract void m1();
+
+We will declare methods in super class. For this declared method, implementation (logic) is provided by sub class programmers as per their requirement.
+
+
+Method Definition (concrete method)
+=====================================
+If we create a new method with an implementation body, 
+we call it as method definition.
+
+A method definition is also called as concrete method.
+
+Syntax:
+        AM ELM RT MN(param-list) throws EL
+        {
+        --------logic-------
+        }
+
+        Ex:
+        public static void m1 (int x, int y) {
+        };
+
+we can create a conctete method either in super class or in sub class
+
+*Rule: In method definition we can not use the modifier abstract
+
+Method Invocation
+=======================================
+Sending control to a method body to execute its logic is called 
+ method invocation or method calling or accessing.
+
+* When we call a method currently running method exeuction is paused, control is sent to this called method,
+     this called method logic is executed. After method exeuction is completed, 
+     control is returned to calling method, the rest of the statements placed in the calling are executed.
+
+Here we can consider
+        -> main method as calling method and
+        -> m1 method as called method
+
+        Syntax:
+        methodName(args);
+
+if method has parameters we must pass args, else we must not pass arguments
+
+        class Example {
+            static void m1(){
+                sopln("hellow");
+            }
+
+            public static void main(String[] args){
+                Sopln("Hi");
+
+                m1();
+                sopln("HRU?");
+            }
+
+            static void m2(){
+                Sopln("WRU?");
+            }
+        }
+
+//O/P
+    Hi
+    hellow
+    HRU?
