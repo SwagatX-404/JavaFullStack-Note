@@ -1,0 +1,128 @@
+All points on void and non-void methods
+=================================================
+1) What is a void method?
+2) What is a non-void methods?
+3) When should we create method as void method?
+4) When should we create method as non-void method?
+5) On what basis we must choose return type to method?
+6) How can we return a value from a method?
+7) What are diff forms of return statement?
+8) What is the purpose of return; and return val; ?
+9) What are the rules in using return; and return val; ?
+10) What are the rules we must follow in creating void method?
+11) What are the rules we must follow in creating nv method?
+12) What are the diff ways we can invoke a method?
+13) What are the rules we must follow in calling a void method?
+14) What are the rules we must follow in calling a nv method?
+15) Sample project?
+
+
+````````````````````````````````
+        class Example{
+            static void m1(){
+                return;     //correct
+                //return;   //wrong   // return val;
+            }
+
+            static int m2(){
+
+                return;          //wrong
+                return 5;       //correct
+                return 'a';     //correct
+                return "a";     //wrong
+                return 5L;     //wrong
+                return 5F;     //wrong
+            }
+        }
+
+
+Return Vs Return Value:=============
+................................................................
+    Return;
+    =======
+        1) Used for returning control from a methode or from a constructor without value.
+        2) It is allowed only inside void method and constructor.
+        3) Option to placed by Compiler.
+
+    Return val;
+    ===========
+        1) Used for Returning a control from method with value.
+        2) It is allowed only inside a non-void method. The returning value must be compatible
+            and lesser than return type of this method.
+        3) Mandatory to place, will not placed by compiler.
+
+
+
+Diff ways we can call a void and non-void method
+=======================================================
+
+1) Directly by their name ---> m1();
+2) As a variable assignment stmt --> int x = m1();
+3) As an expression operand -------> int y = 10+m1();
+4) As a method argument ---> m2(m1());
+   As an argument to Sopln(-) -----> Sopln(m1() );
+5) As a method return value -> return m1();
+
+
+Q) Among above 5 approaches in which approaches we can invoke void and non-void methods?
+-------------------------------------------------------------------------------------------------
+
+-> a void method can be called only in one way that is in first approach that is directly
+-> a non-void method can be called in all 5 approaches +
+
+Example:
+__________
+        class Example{
+
+            static void m1(){
+                Sopln("m1");
+            }
+
+            static int m2(){
+                Sopln("m2");
+                return 50;
+            }
+
+            psvm(S[] args){
+                
+                m1();                      //correct O/P = m1
+                //int x = m1();           //wrong CE : i c t
+                //Sopln(m1());            // wrong CE:
+                .....................................
+                m2();                     //correct     m2
+                int x = m2();             //correct  x[50]->m2
+                Sopln(m2());              //correct  50
+            }
+        }
+
+
+Develop a program with void and non-void methods :
+=====================================================
+- inside void method
+
+1) Create Student class object
+2) Initialize it with HK values
+3) Display those values in this method itself
+
+- inside non-void method
+
+1) Create Student class object
+2) Initialize it with BK values
+3) Return this object to calling method
+
+In calling method, main method, display the values from the returned Student object
+...............................................................
+        class Student{
+        --- instance variables
+        }
+
+        class College {
+        --- void method
+        --- non-void method
+
+        }
+
+        class Test {
+        main method
+
+        }
