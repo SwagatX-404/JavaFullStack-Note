@@ -1,0 +1,70 @@
+public class UDMethod_ReusableCode_Creation {
+    /*
+    METHODE CREATION AND CALLING
+	  =============================================================================
+	  operation terminology								method terminology	
+	  ========================================			===========================
+		1. operation name									method name
+		2. inputs to this method								parameters
+		3. logic to perform this operation					sequence of statements
+		4. result type returning from this method			return type
+	  =============================================================================
+		
+		
+		syntax:
+		  =====================================================
+			<result type>  <operation name>(inputs) {
+			     ---	
+			     --- logic	
+			     ---	
+			}
+		  ======================================================
+		    <return type> <method name>(parameters) {
+				
+				----	
+				---- seqence of stmts (logic)	
+				----	
+			}
+			
+			the return types can be either
+				1. void						- represents no value return from this method(nothing)
+				2. PDT(b,s,i,l,f,d,c,bo)	- represents single math value
+				3. class name				- represents one object
+				4. array []					- represents either PVs or class objects 
+				
+	Below code shows creating an user defined method 
+	for developing a reusable logic for perfoming addition operation
+	
+	in this method we are printing the result
+	so we use the return void
+	
+	we used static for providing memory and 
+	accessing it without creating object of this class
+	
+	*/
+	
+	static void add(int i1, int i2) {
+		int i3 = i1 + i2;
+		System.out.println("Result: " + i3);
+	}
+	
+	public static void main(String[] args) {
+
+		add(10, 20);
+		add(50, 60);	//calling add() method 3 times
+		add(70, 80);	//with diff values to execute same logic
+						//it is code reusable
+	}
+	//note: calling method again and again is not code redundency
+}
+
+/*
+  Test case: 
+      In add() method replace Sopln() with Sopf() as below
+   	     System.out.printf("The addition of %d and %d is %d%n", i1, i2, i3);  
+		 
+	  The code change is applied to all three add() method calls
+	  this means we changed code one time applied to multiple times
+	  hence this code is reusable
+  
+*/	
