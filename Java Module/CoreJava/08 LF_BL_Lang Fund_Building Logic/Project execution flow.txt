@@ -1,0 +1,32 @@
+Develop a program to add two numbers and display result
+=========================================================
+If the passed number are negative, throw exception IllegalArgumentException
+with the error message Do not pass negative numbers.
+
+If the passed numbers are positive, then only add those two numbers and return result.
+                //Addintion.java
+                ________________________________
+    class Addition {
+	static int add(int a, int b) throws IllegalArgumentException{
+		
+		if((a < 0) || (b < 0)){
+			throw new IllegalArgumentException(
+						"Do not pass -ve number");
+		}
+		else{
+			return a + b;
+		}	
+	}
+                //Calculator.java
+                _____________________________________
+    class Calalculator {
+	public static void main(String[] args) {
+		try{
+			int res = Addition.add(7, 8);
+			System.out.println("Result: " + res);
+		}
+		catch(IllegalArgumentException e){
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+}
