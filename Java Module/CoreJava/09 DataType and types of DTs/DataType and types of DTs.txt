@@ -1,0 +1,206 @@
+Datatypes, Variables, Arrays, Objects
+=========================================================================
+
+1) Need of this chapter?
+2) What is a data type and Why data type?
+3) Types of data types, their purpose & hierarchy chart?
+4) Explain Why do we have 8 PDTs and 7 RDTs?
+5) Explanation on each data type, comparision with 'C'?
+6) Summary chart on DTs name, size, range & dv?
+7) When should we use data type?
+8) What is a variable, use of variable, syntax, C&J activ?
+9) Limitation of a variable, its solution?
+10) What is an array, how to create an array in Java?
+11) Limitation of an array, its solution?
+12) What is a user defined data type/custom data type?
+13) What is a class and why a class is called U D D?
+14) Sample program to create a class as an UD D?
+15) What is an object, class and instance?
+16) Steps to create real world object in Java world?
+17) Sample projects based on Data types?
+18) Interview questions and OCJP Bits
+
+Need of this chapter
+============================================================================
+
+    In this chapter we will learn creating variable & object type memory
+    for storing single and multiple values.
+
+    To perform one operation we must store values in aprogram.
+
+    To store value we must request JVM to allocate memory
+
+    To allocate memory we need to provide information to JVM about 
+    the type of memory and the number of bytes we required to store value.
+
+    To specify type of memory and number of bytes to the compiler and JVM 
+    we must use some set of keywords.
+
+    Those set of keywords are collectively called as data types.
+
+    Hence we can say this chapter data type is used for allocating memory
+    for storing value in a program by specifying the required numbers of bytes and memory type.
+
+
+What is a data type and what is the use of data type?
+=========================================================================
+A keyword that is used for creating a variable or an object memory 
+for storing single and multiple values in a program is called data type.
+
+A data type keyword will provide below informations
+------------------------------------------------------
+
+    1) size of the memory (number of bytes)
+    2) type of the memory (Integer/floating/character/...)
+    3) type of the value and range of the value allowed to store in this memory
+    4) diff operators allowed to apply on this memory
+    5) the result type comes out from an expression when we use this memory in a expression
+
+which ever the keyword provides above information 
+that keyword is technically called as data type.
+
+    for example: 
+byte, short, int, long, etc... are data types public, static, if, etc... are not data types
+
+Diff types of data types
+============================================================================
+Java supports two types of data types
+
+        1) primitive data types (8)
+        2) referenced data types (2+5)
+
+PDTs are used for creating a variable (one value memory) for storing one mathematical value
+
+RDTs are used for creating an object(multiple values memory) 
+for storing mulitple values or objects of same type or diff type.
+
+                        Java Datatypes
+                        ---------------
+Primitive Types(Base Types)         Referenced Types(Derived Types)
+
+    1)Primitive Types(Base Types)
+    -----------------------------------
+                i)Numeric
+                ===========
+                        a)Integral
+                        _______________
+                                I)Integer
+                                ---------
+                                        1]. byte
+                                        2]. short
+                                        3]. int
+                                        4]. long
+                                II)Character
+                                -----------
+                                        * char
+
+                        b)Floating-point
+                        _________________
+                                    1]. float
+                                    2]. double
+                ii)Non-Numeric 
+                ==============
+                        * boolean (not specified)
+
+    2)Referenced Types(Derived Types)
+    ------------------------------------
+                : Array class (size is depending on no of values)
+                    Ex_: String, interface, abstract class, concrete class, 
+                         finale class, enum, annotation, record
+
+
+
+
+Find out Size, Range and default value of each data type
+
+Data          type              Size             Range        default value
+_____       __________         ________        ________      ________________
+
+byte
+short
+int
+long
+float
+double
+char
+boolean
+String
+class
+array
+
+Why do we have 8 PDTs and 8 RDTs?
+=========================================
+    Below chart will show you Maths types and their matching 
+    Java types and default data types
+
+Maths types           sample values          Java types
+-----------------------------------------------------------------
+ Integers              10, 20, 30                 byte, short, int, long
+
+Floating-point         10.0, 20.4, 30.7           float, double
+
+Characters            'a', 'b', 'c', '#','1'      char
+
+Conditional            true, false                boolean
+
+String               "a","b45g","988","Hari"      j.I.String
+
+
+Why do we have 8 PDTs and 5 RDTs?
+=======================================================================
+Based on the type of the value and the range of the value
+
+Java supports 8 PDTs
+---------------------------------------
+The data types int, double, char, and boolean are given based on type of the value
+
+            int ----> for storing integer values
+            double ----> for storing floating-point values
+            char ------> for storing character values
+            boolean --> for storing logical values true and flase
+
+The addional data types byte, short, long and float are given based on range of the data
+
+for storing lesser range value we must use b, s, f for storing larger range value we must use long
+
+Why do we have 8 referenced data types?
+===========================================================================
+    for storing multiple values as one group by using single name.
+
+    By default a PDT variable can store only one value at a time. 
+    But in projects we must store multiple values at a time. 
+    In this case we must use RDTS.
+
+    for storing multiple values of same type we must use array
+
+    for storing multiple values of different type we must use class
+
+Need of this chapter?
+==========================================
+    RAM[    Program[    memory[data]    ]   ]
+
+            [data] :
+                    Single value {PDT variable}
+                    Array object {multiple values of same type}
+                    Class object {multiple values with different types}
+
+When should we use data type?
+==========================================
+    //Store value
+         int = 10;
+
+        1) for creating variable
+        2) for creating parameter
+        3) for creating return type
+
+//pass and receive a value as argument
+
+        static void add(int a, int b) {
+        Sopln(a+b);
+        }
+
+//returning value from a method
+
+        int add(int a, int b){
+        return a + b;
+        }
