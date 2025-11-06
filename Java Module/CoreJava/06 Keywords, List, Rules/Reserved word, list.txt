@@ -1,0 +1,119 @@
+Q) What are the differences between reserved word and keyword? 
+   Can we call a keyword is a reserved word?
+===============================================================
+
+> Every keyword is a reserverd word, but every reserved word is not a keyword.
+
+    For example:
+    ------------
+    'null' is a reserved word but it is not a keyword, 'class' is a reserved word and alsó a keyword
+
+A reserved word that performs some special operation in a Java program is called a keyword.
+
+    We have 71 reserved words, among them
+        51 are keywords, 
+        3 are literals, 
+        10 are restricted kws
+        7 special identifiers
+
+1]  We can't use 51 keywords and 3 literals as user defined identifiers
+2]  We can use 10 restricted keywords and 7 special identifiers as user defined identifiers
+
+
+Java 8v reserved words
+========================
+In Java 8v, we have only 53 reserved words Among them 
+    50 are keywords and 3 are reserved literals
+
+53 Reserved Words
+-----------------
+   1) 50 Keywords   =   48 implemented keywords = [class, void, static, public...]
+                    =   2 unimplemented keywords = [goto, const]
+
+   2) 3 reserved literals     =  [true, false, null] 
+
+
+    - A reserved word that got some implemented logic to perform 
+      one operation in a program is called a KW
+
+    - A reserved word that represents a value is called a literal
+
+
+The keywords goto and const are reserved, even though they are not currently used.
+This may allow a Java compiler to produce better error messages if these C++ keywords
+ incorrectly appear in programs.
+
+
+Java 9v reserved words
+=======================
+In Java 9v, 1 new keyword and 10 restricted keywords are added Hence in Java 9v we have 64 reserved words
+
+64 Reserved Words
+-----------------
+        1) 51 Keywords      = 48 implemented keywords = [class, void, static, public...]
+                            = 3 unimplemented keywords = [goto, const, _ ]
+
+        2) 3 reserved literals  =   [true, false, null] 
+        3) 10 Restricted KWs    =   [module, transitive. to, with,...]
+
+
+Java 10v to 22v reserved words
+===================================
+From Java 10v to 22v, 7 new special identifiers are added These 7 words are not keywords. 
+In total we have 71 reserved words.
+
+71 Reserved Words
+-----------------
+        1) 51 Keywords      = 48 implemented keywords = [class, void, static, public...]
+                            = 3 unimplemented keywords = [goto, const, _ ]
+
+        2) 3 reserved literals  =   [true, false, null] 
+        3) 10 Restricted KWs    =   [module, transitive. to, with,...]
+
+        4) 7 special or reserved identifiers    = [var, record, yield, sealed, non-sealed permits, when]
+
+* We can not use 51 kws and 3 literals as identifiers 
+* We can use 10 restricted kws and 7 special identifiers as user defined identifiers
+
+
+Java 17v reserved words division names
+======================================
+In Java 17v, reserved words are divided into 3 groups
+
+Upto Java 16v groups names
+--------------------------
+    1. Keywords
+    2. Reserved Literals
+    3. Restricted Keywords
+    4. Sepecial identifiers
+
+Java 17v onwards group names
+-----------------------------
+    1. Reserved Keywords (51)
+    2. Reserved Literals (3)
+    3. Contextual Keywords (17)
+
+
+Keywords, rules, list of kws, Java 9 ench
+=============================================
+Note: We have two levels of predefined identifiers
+    1) Reserved words and keywords
+    2) Class, variable, method names
+
+A word that is created as part of compiler and JVM softwares to perform 
+one operation is called keyword and a word that is created as part of compiler 
+and JVM softwares to represent a value is not called as keyword, but is just called as reserved word.
+
+A word that is created as part of library(API) is not called as keyword, 
+it is just called as predefined identifier. And these identifiers are enclosed or under 
+the scope of class and package.
+
+
+Where as keywords are not under any scope or not enclosed by any thing. 
+Hence keywords are directly accessible in our program.
+
+Therefore we can not use keywords or reserved words as userdefined identifier, 
+because we and compiler can not differentiate. +
+
+But we can use predefined identifier as user defined identifer, 
+because we can differentiate them using c/p
