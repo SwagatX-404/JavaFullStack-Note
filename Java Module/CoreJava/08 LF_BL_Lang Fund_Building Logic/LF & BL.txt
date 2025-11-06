@@ -1,0 +1,221 @@
+
+==============================================================================
+Every programming langauge is meant for developing a program to implement an operation 
+to be performed by a computer in an automated way.
+
+Basically programming languages are invented for automating business opearations 
+to be perfomed by a computer.
+
+Automation will give several benefits over manual operations
+They are:
+            1) 24/7 365 days we run our business
+            2) We can have good relation with customer
+            3) Secured, accurate, efficient, fast transaction
+
+An operation contains below five activities :
+
+    1) reading and storing values
+    2) perfoming validations and calculations
+    3) Controlling flow of execution
+    4) throwing errors if given values are wrong
+    5) printing output and error message
+<<
+Every programming languge will provide the same fundamental concepts 
+to perform above five activities to implement logic for an operation 
+in developing a program
+
+Every Langauge will provide below 5 concepts to perform above 4 activities, they are
+==========================================================================
+        1) Data types
+        2) Operators
+        3) Control flow statements
+        4) Exception handling statements
+        5) Print statement
+The above 5 concepts are technically called Language Fundamentals.
+
+The purpose of above 4 concepts is :
+=======================================
+    1) Data types : 
+                are used for creating a variable and object for 
+                storing values in a program
+
+    2) Operators : 
+                are used for performing validations and calculations
+                to verify the given values are correct or worng 
+                for genereating results and for throwing exceptions.
+
+    3) Control flow statements :
+                are used for controlling the execution flow of a program 
+                based on the given input values. If given values are correct 
+                it allows to execute calculations and if given values are worng, 
+                it allows to execute throwing exception logic.
+
+    4) Exception handling statements :
+                are used for throwing and reporting an exception and further 
+                to catch the thrown exception
+
+
+The concepts object and exception handling statements are exist only in 
+OO programming languages such as C++, Java,.Net, PHP, Scala, Python, 
+even we have them in PL/SQL.
+
+We do not have object and EH statements in C language.
+Summary:
+==========
+We have 4 language fundamentals for develoing an operation, they are
+
+        1) Data types - for storing values
+        2) Operators for performing validations & calculations
+        3) Control flow statements -for controlling execution flow
+        4) Exception handling statements for throwing & catching an exception
+
+Steps to Build Logic
+======================
+    1)  Read & Store input values from other programmer or keyboard
+
+        2)  Validate those values =>
+        ==========================
+
+3) values are correct    : 4) Perform calculations generate results, return/display result.
+3) values are wrong      : 4) throw exception with error message or display error msg.
+
+Develop a program to add two numbers and display result
+=========================================================
+If the passed number are negative, throw exception IllegalArgumentException
+with the error message Do not pass negative numbers.
+
+If the passed numbers are positive, then only add those two numbers and return result.
+                //Addintion.java
+                ________________________________
+    class Addition {
+	static int add(int a, int b) throws IllegalArgumentException{
+		
+		if((a < 0) || (b < 0)){
+			throw new IllegalArgumentException(
+						"Do not pass -ve number");
+		}
+		else{
+			return a + b;
+		}	
+	}
+                //Calculator.java
+                _____________________________________
+    class Calalculator {
+	public static void main(String[] args) {
+		try{
+			int res = Addition.add(7, 8);
+			System.out.println("Result: " + res);
+		}
+		catch(IllegalArgumentException e){
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+}
+
+1) In above program we have used data type int for specifying 
+    the return type of add metod and for creating parameters for 
+    add method and also used for creating a variable in try block for storting result.
+
+2) In above program we have used operators
+
+    <, || for performing validations to know the given values are -ve number or not
+    + for performing calculations for adding the given two numbers
+    = for assignment operation, means for storing values in the variable
+
+  new for creating IAE class object
+
+3) In above program we have used control flow statements
+
+if and else for taking decision which block of statements
+    return   : must execute based on condition retun value for 
+               retunring result to calling method main
+
+4) In above program we have used EH statements
+
+    throw   : for throwing an exceptions with error message 
+              if given inputs/arguments are wrong
+
+    throws  : for reporting/informing the exceptions throwing out from this method
+
+    try  : for placing exception causing statements and further 
+           try to catch this exception in this current method itself.
+
+    catch   : for catching the exception that is raised in try block, 
+              and further to place this caught exception handling code to take necessary 
+              actions on this exception either displaying error message or doing some other work.
+
+Compilation and execution:
+===============================================================
+We need to compile only Calculator.java,
+Compiler will compile Addition.java file automatically 
+because we used class Addition in class Calculator.
+
+        >javac Calculator.java
+        |->Calculator.class
+        |->Addition.class
+
+Execution Case #1: input values are 10 and 20
+
+        >java Calculator
+        Result: 30
+
+Execution Case #2: input values are -10 and 20
+
+        >javac Calculator.java
+        >java Calculator
+
+        Do not pass -ve number
+
+Execution flow of above program with case #1: vals 10, 20
+===============================================================
+    1) End-user executes the class Calculator by passing values 10 and 20
+    2) Inside main method, inside try block res variable memory
+    3) is created and then add() method is called by passing the values 10 and 20.
+    4) Then control goes to Addition class add() method
+    5) Inside add() method the input values
+                10 will be stored in parameter a
+                20 will be stored in parameter b
+    6) If condition validation logic is executed, it generates false
+          because given two numbers are not -ve numbers
+    7) Then control goes to else block
+    8) else block logic is executed result 30 is generated
+    9) with this result 30 control returns to main method
+    10) this result 30 is stored in the variable res
+    11) next this result is passed and substituted in Sopln()
+    12) finally the result 30 is displayed on console to end-user
+
+Execution flow of above program with case #2: vals -10, 20
+====================================================================================
+Open Calculator.java and then change values from 10,20 to -10, 20 
+then save program, compile and then execute it.
+
+The steps 1,2 and 3 are same as in case #1
+  
+    1) End-user executes the class Calculator by passing values -10 and 20
+    2) Inside main method, inside try block res variable memory
+    3) is created and then add() method is called by passing the values -10 and 20.
+    4) controls goes to Addition class add method with the values -10 and 20,
+    5) These values are stored in parameters a and b resp.
+    6) Further if() condition is exeucted with these values, and generates result true,
+          becuase given values are -ve
+    7) then control goes into if block, executes if block code,
+    8) creates exception IAE object with given error message
+    9) then throws this IAE to main method
+    10) then main method passes this IAE to catch block, catch block with catch this IAE and stores in var e
+    11) then catch logic is executed, e.getMessage() method will retrieve the error message from IAE object
+    12) finally error msg Donot pass -ve number is displayed on console to the end-user
+
+Run below cases to understand the functionality of throw, throws, try and catch
+===============================================================================
+Case #1: Remove throws IAE, then compile and execute Calculator class by passing -10, 20
+
+Result:
+            <>
+
+Case #2: Place throws IAE, now remove throw new IAE() then compile and execute Calculator class
+
+Result:     <>
+
+Case #3: Place throw new IAE(), now remove try and catch blocks in Calculator class, then com an exe it
+
+Result:     <>
