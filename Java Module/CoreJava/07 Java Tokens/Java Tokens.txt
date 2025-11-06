@@ -1,0 +1,48 @@
+Token:
+========
+→ Token is a smallest unit in a program, 
+  that can not be further divided. 
+  Using token we can identify programming elements and can perform some operations.
+
+    class addition {
+        int a = 10;
+        int b = 20;
+        int c = a + b; 
+    }
+
+    keywords =  class, int, int, int
+    Identifiers =  Addition, a, b, c
+    operators =  =, =, =, +
+    literals  =  10, 20
+    separators =  {  ;  ;  ; }
+
+1) Identifiers
+2) Keywords
+3) Literals
+4) Operators
+5) Separators
+
+→ Java supports 5 types of tokens
+====================================
+1) Identifiers      (13) (class, variable, method, interface, enum, 
+                          module, package, annotation, label, generic, parameter, name, ...)
+
+2) Keywords         (51) (priv, pub, st, vo, int, long, satic, void, class, interface, ....)
+
+3) Literals         (7) (10, 10.5, 'a', true/false, "a", null, A.class) =[int,float, char, bool, str, null, class]
+
+4) Operators        (40) (+, -, *, /, %, ||, !, ==, !=, ->, =>, ?, :, new, instanceof,  ...)
+
+5) Separators       (12) { } [] () ; , . :: ... @
+
+
+Note:
+======
+1) double colon(::) is not a operator in Java, it is separator. Used for referencing method and constructor.
+2) The arrow (->) is not a separator. It is Lambda expression operator.
+3) The separators
+        ... and @ given in 1.5v
+        ::        given in 1.8v
+
+    The operator
+    ->           given in 1.8v
