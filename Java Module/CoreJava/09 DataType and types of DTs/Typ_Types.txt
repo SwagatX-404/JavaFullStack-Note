@@ -1,0 +1,141 @@
+/*
+09. Types of Data Types?
+	- Java supports 2 types of data types
+		1. Primitive Data Types		[8]
+		2. Referenced Data Types	[2+6]
+		
+	- PDTs are used for creating variable memory 
+	  for storing single value 	
+	  
+	- RDTs are used for creating object memory
+	  for storing multiple values as one group
+	  
+		Note:  
+			- A variable is a memory
+			  it is a single value memory
+			  
+			- An object is also a memory, but
+			  it is multiple values memory
+	  	   
+10. Java Data Types hierarchy chart?	   
+											
+											
+											Java Data Types
+								
+						Primitive Types						Referenced Types				
+						 [Base Types]					    [Derived Types] 
+						 
+						
+				 Numeric				Non-Numeric
+				
+		Integral		Floating-point		
+																			depending on
+	Integer	   Character										            number of values stored
+																			 
+	  byte  (1)	   char	(2)		float(4)		boolean				array   class
+	  short (2)					double(8)        not specified                                
+	  int	(4)																interface
+	  long	(8)																abstract class
+																			concrete class
+																			final class
+																			enum
+																			annotation
+																			record
+		Note: String is a class, it comes under RDT 
+		
+11. Data types table with [name, size, range and default value]?
+	|========================================================================================|
+	|	Data Type Name	Size [byte(s)]			Range						Default Value	 |
+	|========================================================================================|
+	|		byte			1				-128 to 127							0			 |
+    |________________________________________________________________________________________|		
+	|		short			2				-32,768 to 32,767					0			 |
+    |________________________________________________________________________________________|		
+	|		int				4				-2,147,483,648 						0			 |
+	|											to											 |
+	|										+2,147,483,647 									 |
+    |________________________________________________________________________________________|		
+	|		long			8				-9,223,372,036,854,775,808			0L			 |
+	|												to										 |
+	|									    +9,223,372,036,854,775,807 						 |
+    |________________________________________________________________________________________|		
+	|		float			4				1.40129846432481707e-45				0.0f		 |
+	|												to 										 |
+	|										3.40282346638528860e+38 						 |
+    |________________________________________________________________________________________|		
+	|		double			8				4.94065645841246544e-324			0.0			 |
+	|												to 										 |
+	|										1.79769313486231570e+308 						 |
+    |________________________________________________________________________________________|		
+	|		char			2				0 to 65,535							'\0' 		 |
+	|																		(null character) |
+    |________________________________________________________________________________________|		
+	|		boolean		not specified		false or true						false		 |		
+    |________________________________________________________________________________________|		
+	|		Reference	Depends on PDT		Depends on the PDT	 				null		 |
+    |		data types  values stored		used in creating								 |
+	|________________________________________________________________________________________|		
+	|		String		depending on		no limit, can store					null		 |
+	|					number of chars     any number of chars								 |
+	|________________________________________________________________________________________|		
+	
+12. Develop a program for creating variables 
+    for storing integer, floating-point, character, boolean and 
+	String values in a program
+*/
+class Test02_TypesOfDataTypes{
+	public static void main(String[] args) {
+		
+		//For storing integers we have 4 DTs[b, s, i, l]
+			byte b1 = 100;		//allowed
+			//byte b2 = 200;	//CE: not allowed, exceeding range
+			
+			short s1 = 200;		//allowed
+			//short s2 = 35000;	//CE: not allowed, exceeding range
+			
+			int i1 = 35000;
+			int i2 = 1234567890;
+			//int i3 = 2234567890; //CE: not allowed, exceeding range
+			
+			//long l1 = 2234567890; //CE: this integer numbet is not suffixed with l/L	
+									//then it is consider as int type, and this number 
+									//is not in the range of int, hence we get 
+									//CE: integer number too large
+							   //Soluton: suffix with l/L and assign to long type variable
+			long l1 = 2234567890L; 						
+			long l2 = 1234567890; 	//not need to suffix l/L 
+									//because this number is in the range of int
+									//can be stored in long type variable
+									//so no CE
+									
+		//for storing floating-pointing point we have 2 DTs [float and double]		
+			double	d1 = 10.5;
+			
+			//float	f1 = 10.5; //CE: because 10.5 is considered as double
+			float	f1 = 10.5f; //solution: sufix with f/F
+			
+			
+		//for storing character we have only one DT [char]
+			char ch1 = 'a';
+			char ch2 = 'M';
+			char ch3 = 'F';
+			
+		//for storing boolean value	we have only 1 DT[boolean]
+			boolean bo1 = true;
+			boolean bo2 = false;
+			
+		//for storing name or alpha-numeric values we have 1 data type(String)
+			String str1 = "Hari";
+			String str2 = "TS 09 ED 1234";
+			String str3 = "javaharikrishna@gmail.com";
+		
+		//Assignment: 
+		//Write a program to store your 
+		//[name, age, gender, mobile, course, fee and PAN]
+
+	}
+		
+}
+
+//Assignment: Copy The data types [size, range and default values] table
+//from the above into your notebook
