@@ -1,0 +1,89 @@
+Problem with variable
+=============================================================
+    A variable can store only one value at a time.
+    if we try to store multiple values, previous value is repalced with new value.
+    Always we get only the latest stored value.
+
+//Value.Java
+
+    class Value{
+        psvm ( S[] a){
+            int x;
+            x = 10;
+            x = 20;
+            x = 30;
+            sopln(x)   //o/p = 30 
+
+            int y = 40;
+            y = 50;
+            y = 60;
+            sopln(y)    //o/p = 60
+        }
+    }
+
+PDT variable creation, problem, and solution 
+Array variable and object creation, problem and solution 
+class variable and object creation, advantage, limitation 
+
+    byte b1 = 1;
+    byte b2 = 2;
+    byte b3 = 3;
+    .
+    .
+    .
+    byte b99 = 99;
+    byte b100 = 100;
+
+Problem #1 : Takes more time to read
+    [   |1| | | |100| |4 |  ]
+    [   | |98| | |2| |  |   ]
+    [   |99| | | | | |  |   ]
+    [   |  | |3 | | | | |   ]
+
+Problem #2 : program will become static it is not possible to send all values
+             at a time with single parameter name.
+
+             add(1);      ---> wrong
+             add(1,2);    ----> correct
+             add(1,2,3);    --> w
+             add(1,2,3,4);   ----> w
+    class B{
+        void add(byte b1, byte b2){
+
+        }
+    }
+
+
+KB[***]---enos--> [main methode[memory(var/obj)]]-->Data storing[]--->DB[table[--]]
+
+1. Want to store single value /object               => variable
+2. Want to store same type mul values /objects      => array object
+3. Want to store diff type of mul values/objects    => class object
+
+
+//Storing multiple values and objects of differents type:
+//Sample.Java
+
+        class Sample{
+
+            int i1 = 5;
+            float = 6.7f;
+            boolean bo = true;
+            char ch[] = {'a', '1', '@'};
+
+            Example e1 = new Example();
+
+        }
+
+//Creating variable, object and array object from class Sample
+//Test.Java
+
+        class Test {
+            psvm (S[] a){
+
+                Sample s1 = new Sample();
+                Sample[] sa = { new Sample(), new Sample()};
+
+                //reading and displaying all 3 objects values
+            }
+        }

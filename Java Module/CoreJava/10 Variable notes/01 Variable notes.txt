@@ -1,0 +1,112 @@
+Variable related points
+==========================================================
+
+    1) What is a variable?
+    2) Why variable?
+    3) How can create variable?
+    4) Basic syntax to create variable?
+    5) The Value, is it math value or an object?
+    6) How can create an object?
+    7) Diff b/w PV and RV?
+    8) Compiler and JVM activities w.r.t variable creation stmt?
+    9) Can JVM store data in decimal form?
+    10) How to convert decimal value into binary?
+    11) From which byte the bits are filling (f-l/l-f)?
+    12) Why bits are filled from last - first?
+
+What is a variable and what is the use of variable?
+====================================================
+A variable is a named memory location.
+It is used for storing a value (or) object reference temporarily 
+during program execution.
+
+        X val/ obj ref
+
+How can create a variable?
+====================================================
+A variable is created by using data type either by using PDT (or) by using RDT
+
+    -> For storing mathematical value:
+        we will create variable by using PDTs byte/short/int/long/float/double/char/boolean
+
+    -> For storing objects we will use RDTs:
+        we will create variable by using RDTs
+        array/class/interface/enum/annotation
+
+Basic syntax to create a variable:
+---------------------------------
+       DT varName = value ;
+
+       DT - PDT, RDT
+       value - single mathematical value(PDT), object reference(RDT)
+
+       *NOTE : object is created "new" keyword
+
+For Example :
+    Below statement shows creating a PDT variable
+                int a = 5 ;
+            int - data type
+            a   - variable name
+            5   - literal(value)
+
+Q) What compiler and JVM will do when they come across a variable creation statement?
+=====================================================================================
+How compiler and JVM will compile and execute below variable creation statement?
+
+        int x = 5;
+
+            dt int is valid
+            variable x is valid
+            val 5 is compatible and lesser to int dt
+        *Hence this line is compiled successfully
+
+→ Compiler is responsible for syntax checking
+→ if sytax is correct it generate bytecode,
+→ else it will throw error and terminates compilation
+
+→ In a variable creation statement compiler will verify below four rules:
+
+        1) data type is exist or not
+        2) var name is valid or not as per identifier rules
+        3) value type is compatible with dt or not
+        4) value range is <= DT range or not
+
+Note: compiler software is only resposible for checking given 
+      variable creation statement syntax, it will not allocate memory for 
+      this variable.
+
+Allocating memory for the variable and storing value in that memory 
+is the resposibility of JVM.
+
+From a variable creation statement, JVM will
+
+        1) allocate memory, number of bytes based on the dt
+        2) name this memory with the given name
+        3) store the given value in this memory
+
+From the statement  [ int x = 5; ] JVM will 
+
+        1) creates 4 byte of memory because data type is int
+        2) name with memory as x
+        3) stores the given value 5 in this memory as shown below
+
+        int x = 5;         //x[5] 4 byte
+
+
+Q) Will JVM store given value in decimal format as it is?
+         It means will JVM store 5 as 5 directly?
+=================================================================================================
+A) No, JVM internally converts the given decimal value to its equivalent binary number
+
+    for example, JVM will store the value 5 as 0101
+
+    int x = 5;
+
+    short-cut memory
+        [5]   ---->  4 bytes memory
+
+    complete memory
+            1              2               3             4
+    [   00000000   |    00000000  |   00000000  |  00000101  ]
+
+
