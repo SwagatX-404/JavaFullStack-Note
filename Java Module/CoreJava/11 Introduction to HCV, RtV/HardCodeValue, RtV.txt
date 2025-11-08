@@ -1,0 +1,196 @@
+Reading Runtime Values
+__________________________
+Need of this chapter?
+===========================================================================
+    Upto now we have develop a program or a project by hard coding values directly 
+    in the variable assignments.
+
+
+Reading Runtime Values from KB from end-user (RRV)
+===================================================
+//Addition.java
+        class Addition {
+            psvm(S a[]){
+                
+                int a = 10;
+                int b = 20;
+                int c = a+b;
+                sopln(c);
+            }// it always adds only 10 and 20 values
+        }
+
+//College.java
+         class College {
+            psvm(S a[]){
+                
+                Student s1 = new Student();
+
+                s1.sno = 101;
+                s1.sname = "SK";
+                s1.course= "CJ"
+                s1.fee = 10000;
+            }// it always create the student SK
+        }
+
+The problem in this approach is the program is always exe with the same values.
+We can not change those values at execution time without modifying and recompiling the code
+
+
+Chapter #6: Reading Runtime Values from KB in Java
+============================================================================
+
+1) What is hard coded value and hard coded application?
+2) What is runtime value and runtime values application?
+3) Problems with hard coded applications and advantages with runtime values application?
+4) Diff ways to read runtime values from KB in Java?
+        1) From command line
+        2) By using System.in
+        3) By using DataInputStream
+        4) By using BufferedReader class
+        5) By using Scanner class
+        6) By using Console class
+        7) By using System properties
+        8) By using AWT
+        9) By using Swing
+        10) By using Java fx
+5) Explain diffs b/w all above approaches and when to use each approach and sample projects?
+
+//Addition.java  -->   [this class Addition is called hard coded application]
+        class Addition {
+            psvm(S a[]){
+                
+                int a = 10;     //these values are called
+                int b = 20;     //hard coded values
+                int c = a+b;
+                sopln("Result:"+c);
+            }// it always adds only 10 and 20 values
+        }
+
+
+Hard coded values and Hard coded application :
+===========================================================================
+
+The values those are directly specificed in a program to store in variables or for performing
+ calculations, then those values are technically called hard coded values.
+
+The application that contains values specified directly in its source code to perform 
+ validation and calculations is technically called as hard coded application.
+
+The harde coded values are also called as static values because we can not change
+ them to another values at progarm execution time.
+
+The hard coded application is also called as static application because
+ at this program execution time we can not change the values to another values.
+
+
+Problems with hard coded application
+===============================================================================
+
+We can not change values at execution time, hence this application can be executed 
+ only with the same values specified in the program.
+
+For example, consider above class Addition, it will also execute with the values 10 and 20.
+
+If we want to change values, we must modify values in source code, 
+then we must recompile and execute this class
+
+As a programmer we can do it, but for an end-user 
+ it is very tough modifying Java code every time.
+
+It is not recommanded to develop hard code applications in projects.
+
+We must read and substitue end-user given values to run project.
+
+
+//Addition.java  -->   [this class Addition is called hard coded application]
+        class Addition {
+            psvm(S a[]){
+                
+                int a = 10;     //these values are called <----END_USER
+                int b = 20;     //hard coded values  <----END_USER
+                int c = a+b;
+                sopln("Result:"+c);  //--->END_USER
+            }// it always adds only 10 and 20 values
+        }
+
+
+In above program we have not specified values in source code in development time.
+ Hence it can be executed with any given new values without modifying code
+
+Runtime value and runtime values application
+=============================================================================
+
+The value that reading from end-user and substituting in program 
+ at runtime (execution time) is called runtime value
+
+The application that executes logic by reading values 
+ from end-user from KB is called runtime application
+
+Runtime values are also called as dynamic values Runtime application
+ is alos called as dynamic application
+
+because this application work with user given values.
+
+
+Advantages of Runtime/Dynamic applications
+==============================================================================
+    1) It can executed with any given new values
+    2) No need to recomiple for changing values
+    3) One user values are not misplaced with other user values
+
+It is always recommanded to develop runtime applications in project
+
+All real-time projects you are using dialy are runtime application, 
+ just observ once.
+
+Reading runtime values
+=============================       =====================       =============
+Q1) What is the meaning of runtime value?
+    A) The value passing into Java application at the time of execution
+       is called runtime value.
+
+Q) What is static value/hard code value?
+    A) The value the is specified/placed inside java application 
+       at the time of development is called static/hard coded value
+
+Q) What a runtime/dynamic application?
+    A) A program/application that does not contains values at the time of 
+       development rather if reads values from kb from end-user to executing 
+       its logic is called runtime/dynamic application. 
+                Ex: Calc application is runtime application
+
+Q) What is static or hard coded application?    
+    A) An application that contains values specified in its logic 
+       is called static or hard coded application.
+
+User-->
+        Client Computer - Form[ [sno_, sname_, cours_, fee_[submit]] 
+            Reciept[ sno:102, sname:SK, course:CJ, fee:2k]  ]-->
+
+     -->Server Computer - Student object [ sno[102],sname[SK], course[CJ], fee[2k]]
+
+:java College
+------------------------------------------------------------------------->
+    1) create Student new instance
+    2) read values from end-user
+    3) store all these values in above student instance
+    4) read and display values from the student instance
+
+Q) How can we connect to keyboard?
+Q) How can we read values from keyboard?
+Q) How can we read values in their original type?
+
+Q1) How can we connect to kb and read values?
+-----------------------------------------------
+A) Java supports 10 ways to connect to KB and read values from end-user from KB
+
+        1) From command line
+        2) By using System.in
+        3) By using DataInputStream
+        4) By using BufferedReader class
+        5) By using Scanner class
+        6) By using Console class
+        7) By using System properties
+        8) By using AWT
+        9) By using Swing
+        10) By using Java fx
