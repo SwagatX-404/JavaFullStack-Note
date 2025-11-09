@@ -1,0 +1,194 @@
+Reading runtime values from command line:
+=============================================================================
+    Q1) What is the meaning of runtime value?
+    Q2) What is the meaning of command line?
+    Q3) What is the meaning of command line arguments?
+    Q4) What is the meaning of command line arguments appli?
+    Q5) How command line arguments are passed in java appli?
+    Q6) How can we read command line args in our java appli?
+    Q7) How can we convert the passed arg to its own type?
+
+
+cmd.exe
+C:\users\swaga>java Adddition 10 20
+
+    Addition -> command line argument application
+    10 20    -> command line arguments
+    cmd[        ]  -> command line
+
+What is a command line?
+------------------------
+ In the console window the line at which we run commands javac and java 
+ for compiling and executing java programs is called command line
+
+What is command line arguments?
+----------------------------------
+ The input values those we are sending from command line 
+ are called command line arguments.
+
+What is command line argument application?
+------------------------------------------
+ An application that reads runtime values from command line to execute its logic
+ is called command line arguments application.
+
+Q) How command line arguments are passed into application ?
+=========================================================================
+C:\users\swaga>java Adddition 10 20
+
+    10 20  --> java[1010] --> String[] obj (1010["10" | "20"]) --1010--> java 
+
+    > Addition.main(new String[ ] {"10", "20"});
+............................................................................
+The command line arguments are passed in java applications 
+as String[] object as argument to main() method
+
+w.r.t above diagram,
+when run a class by passing command line arguments,
+
+    1. JVM will read the given values
+    2. It creates String[] object with the number locations equals to given number of values
+    3. Then JVM stores given values as String type in this array
+    4. After array object creation, JVM reads this array object ref
+    5. Passes this ref as argument to this class main method
+
+>java Addition 10 20 
+
+  java -->     > Addition.main(new String[ ] {"10", "20"});
+  //java[1010] --> String[] obj (1010["10" | "20"])
+
+      class Addition{
+        public static void main( String[] args){    //args[1010]
+
+            int a = args[0]  //-wrong  CE : ict //"10" is try to store in a but "10" is 'Str' type not fit in 'int'
+            int b = args[1]  //-wrong CE : ict  //"20" is try to store in b
+
+            //command line arguments are passed into Java application as a String type "10" "20"
+            //It programmer responsibility to covert the input values in to there own type,
+                //by using a special API "wraper classes method"
+            //For converting given value into its respective primitive type, we have 8 wrapper classes for 8 PDTs*
+        }
+      }
+    // By using main method parameter args variable as args[0], args[1], args[2]...etc
+
+We have 8 wrapper classes for 8 PDTs*
+=======================================
+
+PDT             WC(wrapper class)
+====            =================
+byte                Byte
+short               Short
+int                 Integer
+long                Long
+float               Float
+double              Double
+
+char                Character
+boolean             Boolean
+
+void                Void
+
+    byte,int,short,long,float,double ==> [Number] ==> Object
+    char, boolean,      void                      ==> Object
+
+in all these WCs, except in Character class, we have a special static method to convert
+ PDT value to their respective type String form.
+_______________________________________________
+ This method name is parseXxx(String value)   
+    Xxx : data type name
+ _________________________________________________________________________   
+This methods full prototype is
+================================
+public static xxx parseXxx(String value)
+    throws NumberFormatException
+
+In Integer class we will have this method as
+
+        public static int parseInt(String value) 
+                throws NumberFormatException
+
+In Double class we will have this method as
+
+        public static double parseDouble(String value) 
+                throws NumberFormatException
+
+
+We must call parseInt() method to convet the String number "10" as int number 10 as below
+
+            int a = Integer.parseInt("10");
+            a [10]
+
+We must call parseDouble() method to convert the String number "10.5" as double number 10.5 as below
+
+            double d = Double.parseDouble("10.5");
+
+Prepare the method call for converting "10" as long number 10L
+
+            long l = Long.parseLong("10");
+________________________________________________________________
+Prepare method call for converting the string "a" to the character 'a'
+
+We cannot perform this convertion by usting the wrapper class Character, it does not provide parseChar()
+the the statement
+
+        char ch = Character.parseChar("a");     //CE: cfs
+
+is wrong, compiler will throw error
+
+For converting String to char we do not have method in the class Character,
+ but we have method in class String The method is charAt(index), its full prototype is
+
+        public char charAt(int index)
+
+We must call above method as shown below
+
+        char ch = "a".charAt(0);
+        cha['a']
+We must use below code for converting character from string form to char "a" to 'a'
+    //char ch = Character.parseChar("a");    //CE : pC() method is not available in Character class
+
+    String str = "a";
+    char ch = str.charAt(0);    //ch['a']
+// str[1010]-> String obj 1010[0['a']] <--char[]
+
+We must use below code for converting boolean value from String "true" to boolean true
+        boolean bo = Boolean.parseBoolean("true");
+        
+Assume I am sending a value from command line as first argument
+ write a program to convert this argument into all 8 PDTs value?
+======================================================================
+
+byte        b1      = Byte.parseByte(args[0]);
+short       s1      = Short.parseShort(args[0]);
+int         i1      = Integer.parseInt(args[0]);
+long        11      = Long parseLong(args[0]);
+float       f1      = Float.parseFloat(args[0]);
+double      d1      = Double.parseDouble(args[0]);
+char        ch      = ch args[0].charAt(0);
+boolean     bo1     = Boolean.parseBoolean(args[0]);
+
+Rule: On parseXxx() methods
+............................
+The string argument we are passing to parseXxx() method should contain 
+the value type equal or lesser to its respective converting PDT, 
+else parseXxx() method will throw NumberFormatException
+    Ex:
+int x = Integer.parseInt("hari");   //RE: NFE
+
+q) How can we convert command line args to their own type
+> java Addition 10 20 
+        --> Addition.main(new String[]{"10", "20"});
+
+    class Addition {
+        public static void main(String [] args){
+            
+            int a = Integer.parseInt(args[0]);
+            int b = Integer.parseInt(args[1]);
+            int c = a + b;
+
+            System.out.println("Result:"+c);
+        }
+    }
+RRV : java Addition 10 20 
+Result : 30
+
+RRV :
