@@ -1,0 +1,252 @@
+Problems with command line arguments application:
+=================================================================
+    1) End-user donot get information that he must enter value
+    2) End-user donot get information about how many values must enter 
+        and which type of values must enter and in which order values must enter
+    3) In the middle of the program execution we can not enter values.
+        we must enter all values before program execution itself.
+
+Reading runtime values by using Scanner class
+==================================================================
+1) The class Scanner is newly given in Java 5v
+2) Scanner class defined in java.util package
+3) Hence we must add import java.util.Scanner in our java file.
+4) Scanner class defined with several advantages :
+
+    1) We can read values from kb directly in thier own type 
+        we no need to perform converstion.
+    2) We can allow user to enter either one value at a time or multiple values 
+        as like in cmd line appli, and in program we can read each value individially 
+        that to in their own type without developing any additional logic
+    3) We no need to handle any exception
+    4) object creation statement is short and direct
+
+Reading runtime values by using Scanner class
+=================================================================
+    5) We must create Scanner class object as shown below
+            Scanner scn = new Scanner(System.in);
+
+    6) Scanner class defined several methods for reading values from KB directly
+         in their own type. All method names are starts with the word next following 
+         by PDT name. Hence in general Scanner class methods are called nextXxx() methods
+
+The prototype of those methods is
+
+        public xxx nextXxx()      //xxx,Xxx -> PDT name
+                    Exception:throws InputMismatch Exception
+
+Reading runtime values by using Scanner class
+=================================================================
+    7) Scanner class contains the below 9 methods from reading PDT values and String
+
+1) public byte        nextByte()        throws IME
+2) public short       nextShort()       throws IME
+3) public int         nextInt()         throws IME
+4) public long        nextLong()        throws IME
+5) public float       nextFloat()       throws IME
+6) public double      nextDouble()      throws IME
+7) public boolean     nextBoolean()
+8) public String      next()
+9) public String      nextLine()
+
+Note: Like parseChar() method, here in Scanner class also we do not have nextChar() method.
+ Hence by uisng Scanner class approach also we must read a character by using String class charAt(-) method.
+
+Reading runtime values by using Scanner class
+================================================================
+    8) Sample code to read diff type of values from KB
+
+        Scanner scn = new Scanner(System.in);
+
+    int i1 = scn.nextInt();
+    long 11 = scn.nextLong();
+    double d1 = scn.nextDouble();
+    char ch = scn.next().charAt(0);
+    boolean bo = scn.nextBoolean();
+    String str = scn.next();
+    String str = scn.nextLine();
+
+Develop Addition class to read interger number by using Scanner class, 
+add them and display result
+
+        import java.util.*;
+
+        class Addition {
+
+            public static void main(String[] args) {
+
+            Scanner scn = new Scanner(System.in);
+
+            System.out.print("Enter FNO: ");
+            int a = scn.nextInt();
+
+            System.out.print("Enter SNO: ");
+            int b = scn.nextInt();
+
+            int c = a + b;
+
+        System.out.println("Result : "+ c);
+     }   }
+
+
+When will a program execution paused for scn.nextXxx() call?
+==========================================================================
+When there is no data in Scanner object, scn.nextXxx() method 
+call will pause program execution until we enter data.
+
+If data is already available in Scanner object, scn.nextXxx() method 
+call will not pause program execution, 
+it will read the existing data and contiues execution with this available data
+
+The advantage of Scanner class is
+_______________________________________________
+By using Scanner class :
+
+    1) we can read one value at a time by prompting separate message.
+    2) we can read mulitple values at a time with space separator, 
+        and can read each value one a time
+
+Below program shows you reading multiple values at a time 
+and returing each value separatly to application like in CMD args application.
+
+
+    import java.util.*;
+
+    class ReadMulValues Using Scanner{
+
+        ps v main(String[] args){
+
+        Scanner scn = new Scanner(System.in);
+
+        System.out.print("Enter nums:")
+        int a = scn.nextInt(); 
+        int b = scn.nextInt():
+        int c = scn.nextInt();
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);.
+}}
+
+Why class name is Scanner and Why did methods name start with next?
+=======================================================================
+The name Scanner choosen from C lang scanf method point of view 
+to give a good feeling to C programmers that Java is also supporting scanf() functionality.
+
+As part Java 5 new features Java started supporting C lang style formting 
+input and output values using scanf() and printf() methods
+
+But the method names in Scanner class is not scanf
+  rather method names start with next, because through Scanner class
+  Java designers want to support reading multiple values at a time 
+  and returing each value separately upon the call of scn.nextXxx() method
+
+Here nextXxx() is not only reading, 
+after reading it is moving control to next value available in Scanner obj.
+
+Hence its name starts with next
+
+Q) What is the diff b/w next() and nextLine() methods?
+========================================================================
+    1) next() method will read only one word, 
+       it means it read only the characters available upto space
+
+nextLine method will read complete line, 
+it means it will read all characaters available upto enter ky
+
+    import java.util.Scanner;
+
+    class NextVsNextLine {
+
+        public static void main(String[] args) {
+
+            Scanner scn = new Scanner(System.in);
+
+            System.out.print("Enter name: ");
+            //String name = scn.next();
+            String name = scn.nextLine();
+
+            System.out.println("\nEntered name: " + name);
+        }
+    }
+
+
+Develop a program to read a number and name from the console by using Scanner class.
+====================================================================================
+and identify the problem with nextLine() method and its solution.
+---------------------------------------------------------------------
+    import java.util.Scanner;
+
+    class ReadNumName {
+
+        public static void main(String[] args) {
+
+
+            Scanner scn = new Scanner(System.in);
+
+            System.out.print("Num: ");
+            int num = scn.nextInt();
+
+            System.out.print("Name: ");
+            String name = scn.nextLine();
+
+            System.out.println("\nNum: "+ num);
+            System.out.println("Name: "+ name);
+         }
+    }
+
+RRV: javac ReadNumName.java
+RRV: java ReadNumName
+
+Enter number: 101
+Enter name :
+Entered values
+Number:101
+Name :
+
+RRV: -  Why nextLine() method did not pause program execution?
+
+When we call nextLine() method after any of remaining 8 nextXxx() methods calling statement,
+program execution is not paused, it skips reading input. 
+Because it just reads the enter key characters left with previously entered value
+ and returns empty string as result to the program.
+
+
+Solution to Scanner.nextLine() method problem
+=============================================================================
+When we call scn.nextLine() method after the call of any scn.nextXxx() methods, 
+we must call scn.nextLine() method two times, 
+second time call must be assign to name value.
+
+First time call is for reading enter key characters and making Sacanner object empty.
+
+Second time call is for pausing program execution 
+and reading name value and store in our program.
+
+    int num = scn.nextInt();
+    scn.nextLine(); ← 101
+
+    String name = scn.nextLine();   ← SK
+
+Write a program to read and name from keyboard
+==============================================================================
+    import java.util.Scanner;
+
+    class ReadNumName{
+
+        public static void main(String[] args) {
+
+            Scanner scn = new Scanner(System.in);
+
+            System.out.print("Enter num: ");
+            int sno = scn.nextInt(); 
+                      scn.nextLine();   //for enter key
+
+            System.out.print("Enter name: ");
+            String sname = scn.nextLine();
+
+            System.out.println("\n\nYou entered");
+            System.out.println(" Student num\t: "+ sno);
+            System.out.println(" Student name\t: "+ sname);
+             }
+         }
