@@ -1,0 +1,120 @@
+this keyword points
+================================================================================
+
+1) What is this keyword and what is the use of this keyword?
+2) What is current object, how can we access current object members inside a non-static method or constructor or NSB?
+3) What are the compiler & JVM activities with respect to this keyword?
+4) If we modify CO values by using this kw, are those modifications effected to calling method?
+5) Prove that :
+        1) this is a referenced type parameter variable of cons and NSM?
+        2) this is a final variable?
+        3) this variable type is current class type?
+        4) this variable contains current object reference?
+6) What are the rules on this keyword?
+        1) can we access it in static members?
+        2) can we access it in non-static members?
+        3) can we access it at class level in invoking var or method?
+        4) can we print this keyword?
+        5) can we pass it as arg and can we return it from method?
+7) When "this" is a paramter name, why is it created as keyword?
+
+What is a this and what is the use of this?
+===============================================================================
+        class Example {
+
+            int x = 10;
+
+            void m1(){
+            Sopin(x);
+            }
+
+            ps v main(String[] args){
+
+            Example e1 = new Example();
+            e1.m1();
+            }
+        }
+
+this keyword points
+================================================================================
+
+1) The keyword this is a parameter final referenced variable of current class type. 
+    It is used for receiving and storing current object reference in a constructor
+    or in a non-static method for accessing NSV from current object either 
+    for reading or modifying its value.
+
+2) When we create a constructor or a non-static method, compiler will automatically
+    will add this keyword as first prameter with the current class as its type
+    as shown below
+    
+    DWC:
+==============
+    class Example {
+    Example(){ }
+    void m1(){ }
+    }
+
+CGC:
+==============
+    class Example {
+    Example(final Example this){ }
+    void m1(final Example this){ }
+    }
+
+3) When we access a NSV or a NSM in a NSB/constructor/non-static method, 
+   compiler will automatically adds this. as reference to NSV and NSM accessing statements
+
+DWC:
+====
+    class Example{
+        int x = 10;
+
+        void m1(){
+            Sopln(x);
+        }
+    }
+
+CGC:
+=====
+    class Example{
+         int x = 10;
+
+         void m1(Example this){
+            Sopln(this.x);
+         }
+    }
+
+4) When we call a consturctor or a non-static method, as a fist step JVM will 
+    create this keyword memory, stores current object's reference, 
+    pointing to this object Then further executes method logic.
+
+Inside method logic JVM will read and modify NSV value in this variable 
+pointing object as shown below
+
+        class Example {
+            int x = 10;
+            void m1(){
+            Sopin(x);
+            x = 20;
+        }
+
+        ps v main(S[] args){
+            Ex e1 = new Ex();
+            e1.x = 15;
+            e1.m1();
+            Sopln(e1.x);
+            }
+        }
+
+5) In projects, we must develop constructor and NSM logic common to all objects 
+    and further we must execute this logic specific to one object.
+
+For this purpose inside constructor and NSM logic we must access NSV and NSM directly 
+by their name or by using this kw.
+
+Then further we must invoke constructor and NSM by using the object for which 
+we want to execute this logic.
+
+For example:
+            e1.m1();
+            e2.m1();
