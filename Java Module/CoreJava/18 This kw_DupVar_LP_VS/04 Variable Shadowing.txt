@@ -1,0 +1,85 @@
+//_VS.java________________________________________________________
+
+/*
+Variable shadowing, its problem and solution
+================================================================
+ - Declaraing a variable inside a class and inside a method
+   with the same name is called variable shadowing.
+
+ - This concept is named as variable shadowing, because
+   the local variable becomes shadow(hiding) to the class level variable.
+
+ - It means when we access the variable a, 
+   compiler 'reads and modifies' value only in local variable 
+
+ - In presence of VS, if we want to 'read and modify' SV value, 
+   we must access SV by using its class name as Example.a
+   
+ - In presence of VS, if we want to 'read and modify' NSV value, 
+   we must access NSV by using the Current Object(CO) reference 'this' as this.a
+   
+
+ - The diff in b/w
+   	System.out.println(a);			//LV or P or SV (Example.a)
+   	System.out.println(Example.a);	//only SV
+  
+ - The diff in b/w
+	System.out.println(x);			//LV or P or CO NSV (this.x)
+	System.out.println(this.x);		//only CO NSV
+
+Below program explains VS
+*/
+
+class Example {
+	static int a = 10;
+
+	public static void main(String[] args) {
+		
+		int a = 50;  //shadow to the above SV
+
+        
+
+	}
+}
+
+
+//VSProblem.java________________________________________________________
+
+/*
+	Below program explains VS and its problem
+	
+	We can not access CLV. 
+	Here Compiler and JVM always access LV
+	
+*/
+class Example {
+	static int a = 10;                     
+
+	public static void main(String[] args) {
+		
+		int  a = 50;                     //shadow and its problem 
+		System.out.println(a);
+
+		
+	}
+}
+
+
+//VSSolution.java________________________________________________________
+
+/*
+	Below program explains VS, its problem and solution
+	Accessing SV by using class name as Example.a
+	
+*/
+class Example {
+	static int a = 10;
+
+	public static void main(String[] args) {
+		
+		int  a = 50;
+		System.out.println(a);
+		System.out.println(Example.a); //solution to the shadow
+										//accessing SV by using classname
+	}
+}
