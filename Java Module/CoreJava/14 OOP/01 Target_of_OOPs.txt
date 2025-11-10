@@ -1,0 +1,24 @@
+Target of this chapter is
+======================
+1. Developing Business applications(College, Company , Bank, Factory, OnlineShopping, ...)
+2. by creating Real world objects of this business in the programming world
+3. by storing its values and 
+4. by implementig its operations 
+
+Basically in this chapter we will lean below topics
+------------------------------------------------------------------------------
+1. What OOP?
+2. Why OOP?
+3. OOP concepts?. 
+4. Diff bw POP and OOP?
+
+5. What is object?
+6. What is the meaning of OOP?
+7. Why must we create RWO in PW?
+
+8. What are the characterisitcs of an object?
+9. What are the PEs used for creating RWO in PW?
+
+10. What are the building blocks of OOP?
+11. What is an object, class and instance?
+12. Just by using a empty class and instance can we represent RWO in PW?
