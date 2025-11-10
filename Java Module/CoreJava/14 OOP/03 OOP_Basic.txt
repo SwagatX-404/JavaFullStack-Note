@@ -1,0 +1,256 @@
+////////////OOP////////////////////////////////////////////
+
+1) The abbreviation of OOP is "Object-Oriented Programming"
+
+2) The OOPs also stands for "Object-Oriented Programming"
+   There is no meaning for the character 's' in OOPs
+
+3) The OOPS stands for Object-Oriented Programming System
+   There is no word OOPS or OOPS officially
+
+What is OOP?
+=================================================================================
+    1. Language         x
+    2. Technology       x
+    3. Technique        ✓
+
+    [The OOP is a one Programming Paradigm]
+
+OOP is a technique or a methodology. It provides set of suggetions for creating 
+real-world object in programming world by acheving security and dynamic binding.
+
+Q) Why OOP?
+=================================================================================
+OOP is meant :
+
+    1. for creating real-world object in programming world
+    2. for achieving security to object data
+    3. for achieving dynamic binding between objects in accessing 
+       business object operations from user object
+
+*OOP is mainly used for developing business applications
+
+What is an object?
+=================================================================================
+An object is a real-world thing that has values & operations 
+and we can see and use that object.
+
+For example:    옷Person, Animal, Vehicle, Mobile, BankAccount, etc... are objects
+
+Real-World objects----Java & OOP---->Programming world objects
+___________________                  _________________________
+Person, animal, Vehicle etc....--->     class Person {
+                                        ---vars
+                                        ----method
+                                        }
+
+The real-world object is created in Java by using class and instance of the class.
+
+Why should we create RWO in PW?
+=================================================================================
+In real world we perform every operation for one object
+
+In Programming World also we must perform the operations for the same object. 
+Hence, for performing the real world operations for the real world object,
+we must create those RWO in PW.
+
+For example, consider Bank business, we perform deposit and withdraw operations 
+on one customer account. Hence, in PW first we must create the object BankAccount
+ as below to perform deposit and withdraw operations
+
+            class BankAccount {
+
+            }
+
+            BankAccount acc1 = new BankAccount();
+            acc1.deposit(5000);
+            acc1.withdraw(5000);
+
+What is the meaning of Object-Oriented Programming?
+=================================================================================
+
+The process of developing a program around an object is called object-oriented programming.
+
+In OOP, we will develop every program around one object & is data
+
+Once an object & its data is decided then we will think about its operations 
+and their implimentation logic.
+
+The style of thinking, designing and developing a program around a real-world object 
+and its data is called Object-Oriented Programming.
+
+What is the diff in developing a program in C and in Java?
+=================================================================================
+
+◆In C lang our target is developing a program around one function(one formula)
+because C is a SPL/POP.
+
+* In Java lang our targer is developing a program around one object and its data.
+
+Develop a program in C langague?    -> think for formula
+Develop a program in Java langauge? -> think for an object
+
+Object Characteristics
+=================================================================================
+The information that describes an object type is called object characteristics. 
+In real world every object has structure, type, values and operations. 
+In programming world an object can contain only type, values and operations.
+
+So every object has 옷
+--------------------
+3 characteristics :
+                    1. state       - state means        - values
+                    2. behaviors   - behaviors means    - operations
+                    3. identity    - identity means     - unique value
+
+    Student  ---> Type and structure --> class
+             ---> state              --> variables
+             ---> behaviors          --> method
+
+    Student -->  옷HK , 옷BK , 옷SK  --->  individual students ← instances - new keyword
+
+one object is differentiated using other objects
+
+Object type creation :
+=================================================================================
+        class Student{
+            sno;
+            sname;
+            course;
+            fee;
+
+            listen();
+            reply();
+            write();
+            read();
+            writeExam();
+        }
+
+Creating individual actual object :
+-----------------------------------
+                    instance for object HK 옷
+                        sno[101]
+                        sname[HK]
+                        course[CJ]
+                        fee [4500]
+                --> s1 --> new Student();
+-----------------------------------
+                    instance for object SK 옷
+                        sno[104]
+                        sname[SK]
+                        course[PD]
+                        fee [3500]
+                --> s2 --> new Student();
+  
+→   class creates object logically 
+→   new kw(instance) creates object physically
+
+→   An object is represented in the PW by its values
+→   Hence we must allocate memory for each object separately for storing its values
+
+Develop a smaple code snippet for creating RWO Employee in PW 
+Also creates a below RWO in PW one separe program for each obj
+=================================================================================
+           Student → 
+         → Employee → 
+         → BankAccount  →
+         → Bike  →
+         → Laptop  →
+         → Shaadi →
+
+Object in RW and in PW :
+=======================
+   object : thing   - Student                    - real world object
+          : instance  - sno, sname, course, fee  - Java world object
+    Storing student data --->
+
+
+OOP Basics :
+================================================================================
+→ class
+        1) User defined data type
+        2) Blue Print of an object
+        3) Specification of an object
+        4) Logical Constructor of an object
+        5) Design or plan of an object
+
+→ object
+        1) Real World Thing
+        2) Instance of a class
+
+→ instance
+        1) one copy memory created from a class
+
+Class as a blue print:
+-------------------------
+Assume customer is interested in Hut type buildings,
+as he wants to construct individual houses.
+
+Then customer provides sufficient land to the builder then builder 
+constructs building as many as coustomer required exactly same it is there on paper.
+
+Summary:
+=======
+    1) object is real-world thing which is an instance of a class
+        For example: Student, Employee, BankAccount, Bike,
+
+    2) class is a blue print of an object from which we will create multiple objects of same type. class specifies what an object will contain and what operations object perform
+        For example: Student{ sno, sname, listen(), write() }
+
+    3) instance is a memory created from a class for storing particular object values of this class type
+        For example:
+                    Student(101, "HK")
+                    Student(102, "ВК")
+
+Summary: Steps to create RWO in PW)
+--------------------------------------
+    1) Create a class with object type name (Student, Emp)
+    2) Inside this class declare fields to store values of this object (sno, sname, course, fee)
+    3) Create instances one per each individual object (HK, BK)
+    4) Store this object values in this instance (HK values)
+    5) Read and display values of the objects from their respective instances (s1, s2, ...)
+
+Note:
+→ every statement we must read and understand like compiler and JVM.
+→ It means we must verify the statement syntax and we must allocate memory 
+    for that statement.
+
+Student 옷 :
+===========
+        - type and structure 
+        - state
+        - behaviour
+Student  :
+        옷HK  - new Student();     - 101 HK
+        옷BK  - new Student();     - 104 BK
+        옷SK  - new Student();     - 108 SK
+
+        class Student {
+
+            ---variables
+            ---methods
+            ---constructors
+            ---blocks
+            ---inner class
+        }
+
+//Sudent.Java
+    class Student{
+        int sno;
+        String sname;
+        String course;
+        double fee;
+
+    }
+
+//College.Java
+    class College{
+        psvm(S[] a){
+
+            Student s1 = new Student();
+            Student s2 = new Student();
+        }
+    }
+
+=====================
+Similarly for Employee, BankAccount
