@@ -1,0 +1,96 @@
+Java Supports 8 programmig elements
+=======================================================================
+    1) module
+    2) package
+    3) class
+    4) variables
+    5) methods
+    6) constructors
+    7) blocks
+    8) inner classes
+
+1) Java supports all above programming elements
+    for representing real-world object in programming world 
+    and for implementing OO programming concepts by using Java langauge
+
+2) According OO programming we must devlop all programs around objects.
+
+3) An object is a real-world thing that you can see & use 
+    For example: Person, Animal, Vehicle, Mobile, BankAccount, etc... are objects
+
+4) Developing a program around an object means we must create a program
+
+        1) to represent a particular object (ex: Person)
+        2) by storing that object values (ex: name,h,w,...)
+        3) and by implementing its operations(ex:sleep, eat) 
+            by using a class, variables and methods respectively
+
+5)  class   :  is meant for representing object
+    variable  :  is meant for representing value
+    method  :  is meant for representing operation
+
+6) Hence by using above programming elements
+    we must bring real-world objects into programming world to perform 
+    their operations by using computer as part of one business application.
+
+            For example:
+
+                Real-World objects
+                ------------------
+                옷, animal, Vehicle etc....
+
+                ->Java & OOP
+
+                Programming world
+                --------------------
+                class Person {
+                    ---vars
+                    ---meths
+                }
+
+7) As per above diagram we can conclude that :
+=====================================================================================
+    1) We must create multiple classes as many diff type of objects as we want to create
+    2) In each class we must create mulitple vars based on the multiple values 
+        of this object we want to store
+    3) Also inside class we must create mul methods based on the multiple operations 
+        this object performs.
+
+For example as per above diagram we must create 6 classes with the required nubmer 
+of variables and methods.
+
+8) As per above diagram, we must create 6 classes as shown below:
+------------------------------------------------------------------
+    class Person{
+        ---vars
+        ---meths
+    }
+
+    class Animal{
+        ---vars
+        ---meths
+    }
+
+    class Bike{
+        ---vars
+        ---meths
+    }
+
+    class Mobile{
+        ---vars
+        ---meths
+    }
+
+    class Laptop{
+        ---vars
+        ---meths
+    }
+
+    class BankAccount{
+        ---vars
+        ---meths
+    }
+
+9. Basically by using class, we are binding properties and operations of an object 
+    as one group by separating from other object's properties and operations 
+    as shown in the above programs.
