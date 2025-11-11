@@ -1,0 +1,124 @@
+In a Java file, where can we create a variable?
+==========================================================================
+        Example.java
+
+        //int a = 10; X CE:
+        class Example{
+
+                int a = 20;
+
+                void m1() {
+                int a = 30;
+                }
+        }
+
+Types of Variables
+============================
+        class Example {
+
+                int x = 10;
+                double d = 20;   //class level variable//storing obj value
+
+                void m1() {
+
+                    int p = 50;
+                    String s = "abc";
+                    long[] la = null;   //method level variable//storing operation value
+            }
+        }
+
+Types of Variable Chart :
+=========================
+                          Types of Variable
+                                  |
+                ----------------------------------
+                |                                |
+        Class Level Variable              Methode Level Variable
+            --------------------          -----------------------
+ Static Variable        Non-Static V     Parameter       Local Variable
+ (p.d, p.p)             (Instance v)            |---------|----------------> Final
+                        (s, f, t, v)
+
+Allowed Modifier ( p.d, p.p,    s,f,t,v)
+
+
+static variable
+================================================================
+    
+    1) A variable created at class level with static keyword is called as static variable.
+    2) Static variable is used for storing a values common all objects of a class 
+        and common all methods of this class.
+    3) static variable will have only one copy memory
+    4) static variable will automatically get memory when its class is loaded into JVM.
+
+Non-static variable
+================================================================
+
+    1) A variable created at class level without using static kw
+    2) NSV is used for storing a value specific to each and every object separetly.
+    3) NSV will have mulitple copies of memory 1 per each obj
+    4) NSV will get memory only when we create object
+    5) NSV will get mul cps of mem, as many objs as we cretd
+
+        class BankAccount {
+
+            String branch;
+            String ifsc ;
+            long accNum;
+            String accHName;
+            double balance;
+        }
+////
+            new BankAccount();  //obj1
+
+            branch
+            ifsc
+
+            accNum 
+            accHName
+            balance
+
+            new BankAccount();    //obj2
+
+            branch 
+            ifsc
+
+            accNum
+            accHName
+            balance
+
+Here above branch and ifsc is same for all BankAccount, so make them " static "
+    class BankAccount {
+
+            static  String branch;
+            static  String ifsc ;
+                    long accNum;
+                    String accHName;
+                    double balance;
+        }
+//obj 1
+            new BankAccount();
+            accNum 
+            accHName
+            balance
+
+//obj2
+            new BankAccount();
+            accNum 
+            accHName
+            balance
+
+
+        class Example {
+
+            static int a = 10;
+            static int b = 20;
+
+            int x = 30;
+            int y = 40;
+
+            ps v main(String[] args){
+
+                Example e1 = new Example();
+            }
+        }
