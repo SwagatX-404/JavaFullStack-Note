@@ -1,0 +1,29 @@
+Parameter
+=================================================================================
+    1) A variable that is created in method paranthesis is called parameter.
+    2) Parameter is used for receiving and storing I/Ps
+    3) Parameter will get memory when method is called
+    4) Parameter will get memory multiple copies every time when its method is called
+
+Local Variable
+=================================================================================
+    1) A variable that is created inside method body is called local variable +
+    2) LV is used for stored O/Ps of a method
+    3) LV is also get memory when method is called
+    4) LV is also get multiple copies of memory every time when its method is called.
+
+
+        class Addition {
+
+            static void add(int a, int b) {
+
+            int c = a + b;
+            Sopln(c);
+            }
+
+            ps v main(String[] args){
+
+                add(5,6);
+                add(7,8);
+            }
+        }
