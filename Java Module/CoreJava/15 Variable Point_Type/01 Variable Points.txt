@@ -1,0 +1,256 @@
+Variable and Types of variables
+===================================================================================
+    1) Need of this chapter?
+    2) What is a variable and Why variable?
+    3) Syntax to create a variable?
+    4) Sample program to show variables creation?
+    5) Diff b/w PDT var and RDT var?
+    6) Variable creation terminology?
+    7) When should we create a variable?
+    8) Where can we create variable?
+    9) Types of variables, purpose?
+    10) Life time and Scope of a variable?
+    11) Alias names of variables?
+    12) Default value of a variable?
+    13) Local variable rules and static, non-static vars rules?
+    14) Storing, reading, modifying, printing a variable?
+    15) Allowed modifiers?
+    16) Local block and its purpose?
+    17) Summary table, Sample projects, IQs and OCA bits
+
+(18) Java 10v   - new feature-Local variable type inference
+
+Need of this chapter:
+___________________________
+In this chapter we will learn creating primitive and referenced variables 
+for storing values and objects temporarily during program execution.
+
+In this chapter we will learn :
+        > storing values of an object and
+        → storing values of an operation
+
+We will also learn storing common values and individual values by
+        >allocating memory common to all objects and
+        >allocating memory individual to each object separatly
+
+Also we will learn
+        > Receving and Storing input values for a method and
+        → Storing output values of a method
+
+What is a variable and what is the use of variable?
+======================================================================
+A variable is a named memory location.
+It is used for storing a value (or) object reference temporarily during program execution.
+
+How can create a variable?
+=================================
+A variable is created by using data type either by using PDT (or) by using RDT
+
+-> For storing mathematical value
+    we will create variable by using PDTs
+            byte/short/int/long/float/double/char/boolean
+
+-> For storing object
+    we will create variable by using RDTs
+            array/class/interface/enum/annotation
+
+Basic Syntax to create variable:
+```````DT varName = value;
+ PDT    [single mathematical value]
+ RDT    [Object reference]
+
+ NOTE : * Object is created using 'new' keyword
+
+Test01.java
+/////////////////
+    class Example {
+
+        int x = 10;
+        int y = 20;
+    }
+
+    class Test01{
+
+    public static void main(String[] args) {
+
+            int p = 50;
+            int q = m1();
+
+            String s1 = "Hari";
+            String s2 = new String("Hari");
+
+        Example e1 = new Example();
+        }
+
+        static int m1(){
+            return 60;
+    }}
+
+What are the diff operations we can perform on a variable?
+=============================================================================
+On a variable basically we will perform 2 operations
+
+    1) creating variable memory         int x;   //x[10]
+    2) accessing variable               x=10:    //Sopin(x);     //O/P 10
+
+variable
+> creation    DT vn;
+> accesssing    vn
+
+Creation :
+    without initial value   - dec
+    with initial value  - def
+
+Accessing :
+    storing value first time    - initializations
+    modifying value             - assign
+    taking existing value       - reading
+
+Variable Terminology                    Sample code :
+======================
+                                        
+1. variable declaration             -   int x;
+2. variable definition              -   int y = 20
+3. variable initialization          -   x = 40
+4. variable assignment              -   x = 50
+5. variable reading                 -   int z = x
+                                        Sopln(x);
+6. int z = x+y;
+7. p =x+y+z
+
+Summary:
+========
+Basically we will do two things on a variable
+
+1. Variable declaration     ->  new memory is created
+
+2. Varaible accessing :
+                        → initializing           |
+                        → assigning/modifying    |  existing memory will be used
+                        → reading                |
+
+Rule: in accessing variable, that variable should be declared in previous lines
+Rule: in reading variable it should have value.
+
+Identify what is the output from below program?
+-----------------------------------------------
+    Sopln(a);
+
+    int a = 10 ;
+    Sopin (a);
+
+    int b;
+    Sopln(b);
+
+    b = 20;
+    Sopln(b);
+
+    c = 30;
+    Sopln(c);
+
+    a = c ;
+    Sopln(a);
+
+    class Test{
+        psvm ( S [] a){
+            int x;
+            //sop(x);
+
+            x = 10;
+            sop(x);
+
+            x = 20;
+            sop(x);
+        }
+    }
+
+Limitations on variables
+================================
+1.for a variable new memory is allocated only if it has data type before its name.
+
+2. when we store/assign value to a variable new memory is not created, 
+    existing memory is accessing, in that memory this value is stored
+
+3. when we read variable value, it must have value, else we will get CE.
+    The value is read from its memory not from previous line
+
+4. when we assign new value, old value is replaced with new value
+
+5. When we read a variable value, always we get the latest modified value
+
+    class Test02 {
+
+        public static void main(String[] args) {
+
+            int p;
+            Example e;
+
+            p = 50;
+            e = new Example();
+
+            p = 70;
+            e = new Example();
+        }
+    }
+
+
+    class Test03 {
+
+        public static void main(String[] args) {
+
+            int a = 50;
+            System.out.println("a: "+a);
+
+            a = 70;
+            System.out.println("a: "+a);
+
+            Example e1 = new Example();
+            System.out.println("el: "+e1);
+
+            e1 = new Example();
+            System.out.println("el: "+e1);
+    }}
+
+Primitive variable
+=============================== Vs
+    1) A variable that is created by using primitive data type is 
+        called primitive variable.
+                Ex: int a = 10
+
+    2) A primitive variable allows us to store only mathematical value
+
+    3) we can use primitive variables in calculations, because the generated result is meaningful
+            For example:
+                    int a = 10
+                    int b = 20
+                    int c = a + b
+    4) If we print primitive variable, directly the value available in primitive variable is displayed.
+        Ex: System.out.println(a); //10
+
+Referenced variable
+=========================================
+    1) A variable that is created by using referenced data type is called referenced variable
+            Ex: Example e1 = new Example();
+
+    2) A referenced variable allows us to store only reference of the object but not mathematical value.
+
+    3) we can not use referenced variable calculations, compiler will throw error, 
+        because the newly generated reference does not point to any object
+        For example:
+            Example e1 = new Example();
+            Example e2 = new Example();
+            Example e3 = e1 + e2:
+
+    4) If we print referenced variable, values of the object is not display 
+        rather object's classname@hashcode in hexa string format is displayed.
+
+        For example:
+                    System.out.println(e1);
+                    //Example@28a418fc
+
+    Example e1 = new Example();
+    Sopln(e1.x);
+    Sopln(e1.y);
+
+    Sopln(new Example().x);
+    Sopln(new Example(),y);
