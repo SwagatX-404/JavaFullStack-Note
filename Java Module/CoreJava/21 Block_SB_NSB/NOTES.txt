@@ -1,0 +1,337 @@
+Block and Types of blocks
+=========================
+1. A nameless block, just '{' and '}' placed 
+   either inside a class or inside a method is called block 
+
+   For example:
+	  class Example {	
+		{  //CLB
+
+
+		}
+
+		void m1() {
+			{ //MLB
+
+			}
+		}
+	  }
+
+2. Java supports three types of blocks 
+	1. static initializer block	(SIB)
+	2. instance initializer block	(IIB) 
+	3. local block			(LB)
+	
+	- SIB and IIB are class level blocks
+	  means they are allowed to place only at class level
+	
+	- Local block is a method level block
+	  means it is allowed to place inside a method
+	  
+	- For example:  
+		
+		class Example 
+		{
+			//class Level
+			   static {	//SIB
+			   
+			   }
+			   
+			   {		//IIB
+			   
+			   }
+			   
+			   void m1() 
+			   {
+			   
+				{	//LB
+				
+				}
+			   }
+		}
+
+3. SIB is used for 'initializing' static variables and  also used for
+   executing some logic 'only once' when 'class is loaded' into JVM 
+
+   IIB is used for 'initializing' non-static variables and also used for
+   executing some logic 'only once' common to all constructors
+   when new object is created
+
+   LB is used for 'decreasing' the scope of a local variable and 
+   destroying the variable's memory after its usage is completed 
+
+4. Sample program on LB
+	- A nameless block that is created inside a method is called local block
+	- It is used for destroying local variable after its usage is completed 
+
+	- For example
+		//Test01.java
+		class Example {
+		    void m1(int p) {
+			   int q = 60;
+
+			   {//LB
+				int r = 70;
+				System.out.println(r);
+		      	   }
+			
+			   System.out.println(p);
+			   System.out.println(q);
+			   //System.out.println(r); //CE: c f s
+
+			   int r = 80;			//allowed here to recreate
+			   System.out.println(r);       //accessing this second var
+		    }
+		}
+
+5. Sample programs on SIB
+	- A nameless block that is created inside a class 
+	  outside of all methods with a keyword static 
+	  is called static block
+	  
+	- Static block is used 
+		1. for initializing static variables and 
+		2. for executing some logic 
+	  'only once' at the time of class loading into JVM 
+
+	- For example: 
+	  Below program shows creating SB to exe some logic at the of CL 
+		//Test02.java
+		class Example {
+		    static {
+			System.out.println("SB");
+		    }
+
+		    static void m1() {
+			System.out.println("SM");	
+		    }
+
+		    public static void main(String[] args) {
+			System.out.println("MM");	
+		    }
+		}
+
+		>javac Test02.java
+		>java Example
+		   SB
+		   MM
+
+	- JVM executes static blocks automatically just by loading the class 
+	- First static block is executed and then main method is executed 
+	
+	- but Static methods are executed only when we call it explicitly 
+	  either from static block or from the main method 
+
+	- In the above program first SB is executed then MM is executed. 
+	  The SM m1() is not executed because it is not called 
+	  either from SB or from main method 
+
+	- Below program explains initializing static variable from static block 
+	- and reading that initialized value from SV in MM and SM 
+	  	//Test03.java
+		class Example {
+			static int a ;
+		
+			static {
+			   a = 10;
+			   System.out.println("from SB a: "+ a);
+			}
+
+			public static void main(String[] args) {
+			   System.out.println("from MM a: "+ a);
+			   m1();
+			}
+
+			public stati void m1() {
+			   System.out.println("from SM a: "+ a);	
+			}
+		}
+
+	- Develop a program to intialize a SV from SB with Runtime Value 
+	  by reading it from keyboard from end-user during program execution
+	  	//Test04.java
+		import java.util.Scanner;
+		class Example {
+			static int a ;
+			static {
+			   Scanner scn = new Scanner(System.in);	
+
+			   System.out.print("Enter  value for a: ");
+			   a = scn.nextInt();
+
+			   System.out.println("from SB a: "+ a);
+			}
+			public static void main(String[] args) {
+			   System.out.println("from MM a: "+ a);
+			   m1();
+			}
+			public stati void m1() {
+			   System.out.println("from SM a: "+ a);	
+			}
+		}
+
+6. Sample programs on IIB? 
+	- A nameless block that is placed inside the class 
+	  outside of all methods without static keyword 
+	  is called instance initializer block 
+
+	- For example
+		//Test05.java
+		class Example {
+			{ //IIB start
+
+			}//IIB end
+		}
+
+	- It is used for initializing instance variables and for executing 
+	  some logic 'only once' at the time of new object creation
+	  common to all constructors 
+
+	- Below program exaplains creating IIB and its execution flow
+		//Test06.java
+		class Example {
+			 {
+                            System.out.println("IIB");
+			 }
+                            
+			 public static void main(String[] args) {
+                            System.out.println("MM");			  
+			    Example e1 = new Example(); //DC calling
+			 }
+		}
+		O/P:	MM
+			IIB
+
+		//Test07.java
+		class Example {
+			 {
+                            System.out.println("IIB");
+			 }
+                           
+			 Exammple() {
+                             
+			    System.out.println("NPC");	
+			 }
+
+			 public static void main(String[] args) {
+                            System.out.println("MM");			  
+			    Example e1 = new Example(); //NPC calling
+			 }
+		}
+		O/P:	MM
+			IIB
+			NPC
+
+		//Test08.java
+		class Example {
+			 {
+                            System.out.println("IIB");
+			 }
+			 Example() {
+                             
+			    System.out.println("NPC");	
+			 }
+			 Example(int x) {
+                             
+			    System.out.println("IPC");	
+			 }
+
+			 public static void main(String[] args) {
+                            System.out.println("MM");			  
+			    Example e1 = new Example();	  //NPC calling
+			    Example e2 = new Example(10); //IPC calling
+			 }
+		}
+		O/P:	MM
+			
+			IIB
+			NPC
+
+			IIB
+			IPC
+
+	- Develop a program to initalize one NSV in IIB common to all constructors and 
+	  another NSV specific to each constructor separately
+		//Test08.java
+		class Example {
+			 int x;
+			 int y;
+			 {
+			    x = 10;
+                            System.out.println("IIB");
+			 }
+			 Example() {
+                            y = 20; 
+			    System.out.println("NPC");	
+			 }
+			 Example(int y) {
+                            this.y = y;  
+			    System.out.println("IPC");	
+			 }
+			 public static void main(String[] args) {
+			    System.out.println("MM");	
+			    Example e1 = new Example();	  //NPC calling
+			    Example e2 = new Example(30); //IPC calling
+			    System.out.println("e1 object values: ("+e1.x+","+e1.y+")");
+			    System.out.println("e2 object values: ("+e2.x+","+e2.y+")");
+			 }
+		}
+		O/P:	MM
+			
+			IIB
+			NPC
+
+			IIB
+			IPC
+			
+			e1 object values: 10 20
+			e2 object values: 10 30
+			
+7. Assignment: Develop a program to count number of objects created from a class.
+
+               Because this class can contain overloaded constructors, 
+	       user programmer can create object of this class 
+	       by call any one of the available constructors
+	       hence we must create a stataic variable and 
+	       must increase it in non-static block common to all constructors. 
+		
+		//Example.java
+		class Example {
+			private static int count;
+			
+			{
+				count++;				
+			}
+			
+			Example(){
+					
+				System.out.println("NPC");
+			}
+			
+			Example(int x){
+
+				System.out.println("IPC");
+			}
+
+			Example(String x){
+
+				System.out.println("SPC");
+			}
+			
+			public static int getCount(){
+				return count;
+			}
+		}
+		
+		class Test {
+			public static void main(String[] args) {
+			
+				Example e1  = new Example();
+				Example e2  = new Example(5);
+				Example e3  = new Example("a");
+				
+				System.out.println(
+					"Number of object created: "+ Example.getCount());
+                    
+			}
+		}
