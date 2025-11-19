@@ -15,7 +15,7 @@ static constructor
 */
 class Example {
                         
-		// //static constructor
+		//static constructor
 		// static Example() {   //CE: modifier staic not allowed here
 
 		// }
