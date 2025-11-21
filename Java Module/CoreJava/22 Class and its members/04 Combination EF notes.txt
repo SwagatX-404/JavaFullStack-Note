@@ -1,0 +1,38 @@
+Static and non-static members combination execution flow
+========================================================
+If a class contains both static and non-static members,
+JVM always starts execution with static members.
+While executing static members, inside static members body, if 
+we create an object, then JVM executes non-static members.
+
+So the flow of execution of both static and non-static members is
+	1. First all SVs memory allocated from top to bottom with default values
+	2. Then SV assignment and SBs are executed from top to bottom
+	3. Finally main method is executed only if this class is run 
+	   by using java command. If the class is loaded into JVM by 
+	   accessing SV or SM or constructor, main method is not executed.
+
+		if we have created object in any one of the  
+		static members SV, SB, MM, SM then NSMs are executed
+
+		4) One new instance is create with new reference	
+		5) All NSVs memory allocated in this new instance with default values 
+		6) Then all NSVs assignment & all NSBs are executed from top to bottom
+		7) Finally the invoked constructor logic is executed
+		8) After object initialization, new keyword returns 
+		   object reference and stored in referenced variable
+	
+	9. After all non-static members execution is completed, 
+	   JVM continues with next static members execution 
+	   as per the flow of execution.
+
+Hence we can conclude JVM starts class execution with SMs
+and ends with SMs, in between SMs execution, 
+if we create object, NSMs are executed.
+
+We can create object of a class any where in the class,
+	1. either at class level by using static and non-static referenced variables
+	2. or in SB or in NSB or in constructor or in SM or in NSM or in MM.
+
+Based on the place we have created object, the NSMs are executed
+in the middle of SMs execution.

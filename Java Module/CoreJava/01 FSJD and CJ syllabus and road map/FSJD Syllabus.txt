@@ -1,0 +1,245 @@
+Day #1: Introduction to Full Stack Java Development and Core Java
+=================================================================
+01. Course Title?
+	    'AI-Powered' Full Stack Java and Core Java
+		with Project Development and
+		Interview Preparation(0-100%)
+			- By Hari Krishna
+			  Naresh i Technologies
+	=================================================    
+	 It's a complete 'power packed' course for 
+	 all Beginners, Intermediates and Experts
+	 for getter job as a fresher or an experienced
+	 with all latest IT trends (AI tools)
+	==================================================    
+			
+02. Pre-requisites to learn FSJD?
+	- No pre-requisites 
+	- You can start FSJD as your first IT course
+	- Any high school, intermediate, UG, PG any branch student can join FSJD 
+	- Any year passed out student can join FSJD
+	- 2025, 24 and 23 passed-out students can try job as freshers
+	- 2023, 22, and previous years passed-outs can try job as only as experienced
+
+03. FSJD Syllabus?	
+     - Full Stack Java syllabus is divided into 5 modules
+
+	1. Java Module
+		1. "Core Java" (HK)	
+		2. "Adv Java"  (HK)	
+		3. Spring Basics
+		4. Spring Boot & Micro services	
+		5. Mini projects	
+		 
+	2. Data Base module		
+		- Oracle DB	        
+	   	  1. SQL    (Structured Query Language)
+		  2. PL/SQL (Procedural Language/SQL)			
+		  
+	3. UI Module		  
+		1. HTML
+		2. CSS
+		4. Java Script
+		5. Bootstrap
+		6. React
+		7. Mini Projects
+	
+	4. DevSecOps modules
+		- Maven, Gradel	
+		- Log4J, SL4J
+		- GIT, GITHub
+		- JUnit, HttpUnit, Mokito
+		- JIRA, Jenkins, Docker, Kafka	
+		- ..... (20+ tools)           	
+	
+	5. AWS Basics module
+		1. Creating AWS account	     
+		2. Installing DB sw                	
+		3. Installing Tomcat sw	     	
+		4. Deploying project, running project	
+		5. Providing project access to client	
+
+	- The first 3 modules are used for developing complete project
+	- The last 2 modules are used for performing after developing operations
+	  builing, deploying, running, testing, sharing code, ... operations
+
+04. Road map to complete FSJD all courses?
+      - We can complete Full Stack Java in 2 modes 
+	  1. Sequentially 1 course after another course 
+	  	- Suitable for college going students and Working Employees
+		- Per day 1 course, if you have more free time 2 courses
+		- Duration of seq flow: 1+ years
+		
+	  2. In Parallel 3 courses per day 
+		- For college completed students
+		- and JOB seekers
+		- per day 3 courses
+		- Duration of parallel flow : 6+ months
+		
+       ========================= Parallel flow ==============================================  
+	Level #1:   
+		[Core Java] +  [Oracle]  +  [HTML, CSS, JS, BS]	       
+		
+	Level #2:   
+		[Adv Java]  +  [DevOps tools]  + [AWS Basics]    -> JOB as Fresher
+
+	Level #3:   
+		[Spring Basics, Spring Boot, Microservices] + [React]  -> JOB as Experienced
+       =======================================================================================
+
+05. Placement Assistance?
+	- For FSJD course, Naresh IT is providing 
+	  placement assistance for FREE*
+
+06. Exam for Placement Assistance?
+	- you will get eligiblility for free Placement Assistance
+	  only after clearing screening test 
+
+07. Placement exam syllabus and exam pattern?
+     1. Example Syllabus 
+	   1. Core Java
+	   2. Oracle
+	   3. HTML, CSS, JS, BS
+	   4. Adv Java
+	   5. Spring Basics
+     2. Exam pattern
+	   1. Multiple choice questions
+	   2. Scenario based logical programs
+
+08. FSJD course 'Fee and Duration'?
+	
+	  1. Fee	: 20,000 (INR) [for all 5 modules]
+	  2. Recordings : You must buy recordings separately 
+	                  for each course
+	  3. Duration   : 6+ months
+	  4. Class time : 7:30PM + diff slots for other batches
+	  5. Class duration: Every batch will be 1:50 mints
+	  6. Material	: Running class notes will be shared by the faculty
+	                  either via google driver or google classroom   
+	  7. Daily classes: 6 days per week [Mon-Sat]	
+	  
+09. What is the Full Stack Java Development?
+	- It is a one course using which
+	  we can development one complete project
+	  end-to-end i.e, 
+		1. Frond-end UI screens to
+		2. Back end programming and
+		3. Data base
+		
+	- Ex: Amazon, irctc, phonepe, bank applications
+	      etc... kind of applications we can develop
+	      by using FSJ
+		
+10. Who is a Full stack Java Developer?
+	 - A developer who can develop complete project
+	   both 'front-end and back-end' by using Java lanaguge
+	   and its frameworks is called FSJ Developer
+	   
+11. Project Architecture?
+	- Every project has two sides 
+		1. front-end and 
+		2. back-end
+	
+	- A front-end is a screen where end-users interact with a website
+		- The HTML pages(UI Screens) which are executed 
+		  in Client System to display forms and reports 
+		  for reading input and displaying output
+		  are all together is called front-end
+		  
+		  -> in short cut we can say on a web site screen
+		     what you see on your system browser is called front-end
+		      For example: Amazon website home page 
+		      is called front-end
+	      
+	- The 'programs and a data base' those are executed
+	  backside of the frontend screens in the server computer
+	  is called back-end
+		- The backend programs are developed by using 
+		  a programming langauges.
+			For example: Java, Python, .NET, etc...
+		
+		- A Database is a storage media where we can
+		  store data of a person or a product permanantly
+			For example: Oracle, MySQL, SQL Server, etc...
+				     are the Databases
+	
+	- Hence, we can say every project has 3 parts
+		1. UI (User Interface)
+		2. Programming
+		3. Data base
+		
+	- Diagram
+	
+12. Diff applications we can develop by using FS Java?
+	1. Desktop applications
+	2. Web applications
+	3. Enterprise applications
+	4. Distributed applications
+	5. Mobile applications
+	6. Gaming applications
+	7. Big data applications
+	8. Testing applications
+	9. DS, ML, DL, AI (Java 25v) 
+
+		  
+Core Java
+=========
+01. What is Core Java?
+    - Core java is the 1st course of FSJD
+    - It is the heart of the entier FSJD
+
+02. Why Core Java?
+    - As part of Core Java we will learn Programming
+	- Basic programs
+	- Math based programs
+	- Object-oriented programs
+	- Projects(amzon, bank, ticket booking,...)
+	
+03. Core Java Sylabus Upto Java 21v?
+	Unit #1: Java Fundamentals
+		1. Installing Java SW, HW program
+		2. Comments, Identifiers, keywords
+		3. DTs, Literals, varables
+		4. Type conversions and type casting
+		5. Reading Runtime Values
+		6. Sample project by using all above chapters		
+	Unit #2: Object-Oriented Programming
+		7. class, vars, methods, conts, blocks
+		8. instances, initializing 
+		9. Accessibility Modifiers
+		10. Encapsultaion, Inh, Poly, Abs
+		11. LC-RP Arch, Reflection API
+		12. Project 
+		13. JVM Architecture
+		14. SMs and NSMs execution flow
+	Unit #3: Logical Programming
+		15. Operators
+		16. Control flow statements
+		17. Arrays
+		18. Searching and sorting algorithms
+	Unit #4: Java API(Library)
+		19. Object class
+		20. Wrapper classes
+		21. Exception Handling
+		21. Mulithreading
+		22. String Handling
+		23. IOStreams(File IO, Serialization, File class)
+		24. Collections Framework [DSA 70%]
+		25. Java 8v [LE, MR, Stream API, Date and Time API]
+	Unit #5: Final Project [UI + Programming + Collection(DSA) as mini Data Base]
+		26. M-V-C based project [Bank application]
+		
+04. Core java Fee and Duration
+	  1. Fee without recordings - 3500 (INR)
+	  2. Fee with    recordings - 6000 (INR)
+	  3. Duration		    - 3 months	
+	  4. class timing	    - 7:30PM-9PM (1.30 Mints)
+	  5. Daily classes	    - 6 days per week [Mon-Sat]
+	  6. Material		    - Running notes shared via GCR
+
+05. Admin details for CJ and FSJD?
+	- For offline students:
+		Mr. Hussian  - 9154 156 547	
+		
+	- For online students:
+		Mr. Akil     - 9154 156 192
