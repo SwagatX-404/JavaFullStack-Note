@@ -1,0 +1,59 @@
+When should we use static members and when should we use non-static members?
+=============================================================================
+class Example {
+
+static membes
+=============
+
+1) static variable
+2) static block
+3) static method
+4) main method
+5) static inner class
+
+when store value and execute logic common to all objects
+
+}
+
+non-static members
+====================
+
+1) non-static variable
+2) non-static block
+3) non-static method
+4) constructor
+5) non-static inner cls
+
+when store value and execute logic specific to one object
+
+What are the members got executed by JVM automatically?
+----------------------------------------------------------
+Among all these members JVM executesnonly SV, SB, MM automatically.
+
+JVM executes SM only when we invoke it.
+
+JVM executes NSMs only when we create object
+
+A class recommended structure with both SMs and NSMs?
+
+class BankAccount {
+
+            SVs
+            NSVS
+
+            SBS
+            NSBS
+
+            Constructors
+
+            SMs
+            NSMs
+
+            main method
+            common method like display
+
+            SICS
+            NSICS
+}
+
+>java BankAccount
