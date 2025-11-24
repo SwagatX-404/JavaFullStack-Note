@@ -1,0 +1,104 @@
+Non-static members' execution flow
+============================================
+When an object is created, JVM executes NSMs in the below order,
+
+→1) First, JVM with the help of new kw, it allocates memory to 
+    all NSVs with default values in the order they are defined from top to bottom.
+
+→2) Then next, JVM with the help of constrcutor, it initializes all NSVs 
+    and executes all NSBs in the order they are defined from top to bottom.
+
+→3) Finally, the invoked constructor logic is executed.
+
+→4) JVM does not execute NSM automatically, JVM executes NSM only if 
+    we called in any one of the above members.
+
+
+        class Example {
+
+                 int x = 10;
+
+            {
+            Sopln("Hi");
+            }
+
+        Example(){ 
+            Sopln("NPC");
+        }
+
+        ps v main(String[] args){
+
+                Sopln("main start");
+
+                Example e1 = new Example();
+
+                Sopln("main end");
+
+        }}
+
+
+Example///////////////
+            class Example {
+
+                int x = 10;
+
+                {
+                Sopln("NSB1");
+                }
+
+            Example(){
+                Sopln("NPC");
+                }
+
+            Example(int x){
+                Sopln("IPC");
+                }
+
+                {
+                Sopln("NSB2");
+                }
+
+                int y = 20;
+
+                {
+                    Sopln("NSB3");
+                }
+
+                
+            ps v main(String[] args){
+
+                Example e1 = new Example();
+
+            }}
+
+///Example/////////////
+Compiler adding chages to NSMs in .class file
+
+    Example.java
+
+    class Example {
+
+        int x = m1(); 
+        int m1(){
+             Sopln("m1:x");
+              return 10;
+        } 
+             {
+             Sopln("NSB1");
+              }
+
+        Example(){
+                Sopln("NPC");
+        } 
+
+        Example(String s){ 
+            Sopln("IPC");
+        } 
+
+        int y = 30; 
+        { 
+            Sopln("NSB2"); 
+            }
+
+        int z = 40;
+    }
