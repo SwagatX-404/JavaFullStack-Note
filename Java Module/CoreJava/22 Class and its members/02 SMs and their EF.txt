@@ -1,0 +1,138 @@
+    Static Member Execution flow
+    ===============================
+    class Example {
+
+        sv1
+        sv2
+
+        sb1
+        sb2
+
+        sm1
+        sm2
+
+        mm
+
+        SIC1
+        SIC2
+
+    }
+
+
+Order of execution of SMs
+----------------------------
+When a class is loaded into JVM,
+
+1) JVM allocates memory to SVs with dvs from TOP to Bottom in the order
+     they have declared
+
+2) SVs assignment and SBs logic are executed in the order they are defined
+     from TOP to Bottom
+
+3) Finally, main method is called and executed.
+
+4) SMs and SICs are executed only when we invoke explicitly.
+
+
+class Example {
+
+    static int a = 10;
+    static int b = 20;
+    static{
+        Sopln("SB");
+    }
+
+public static void main(String[] args)
+    { 
+        Sopln("MM");
+    } 
+
+static void m1(){ 
+
+    Sopln("SM"); 
+    }
+
+
+////////////EXAMPLE
+class Example {
+
+    static int a = 10;
+
+    static{ 
+        Sopln("SB");
+    }
+
+    public static void main(String[] args)
+        { 
+            Sopln("MM");
+        }
+
+    static void m1(){
+     Sopln("SM");   
+    } 
+
+    static int b = 20;
+
+}
+
+
+////////////EXAMPLE
+
+class Example {
+
+        static int a = m1();
+
+        static int m1(){
+        Sopln("SV1:a");
+        return 10;
+        }
+
+        static {
+            Sopln("SB1");
+        }
+
+        static int b = m2();
+
+        static int m2(){
+             Sopln("SV2:b"); 
+             return 20;
+        }
+
+        static void m4(){ 
+            Sopln("SM");
+        }
+
+        ps v main(String[] args){ 
+            Sopln("MM");
+        }
+
+        static int c = m3();
+
+        static int m3(){ 
+            Sopln("SV3:c");
+             return 30;
+        }
+
+        static { 
+            Sopln("SB2"); 
+            }
+
+        }
+
+
+Compiler adding changes to SMs in .class file
+=================================================
+1) Compiler moves all SVs declaration to class level in the order
+     they defined from top to bottom
+
+2) Compiler moves all SVs assignments and all SBs logic into single SB
+     in the order they defined from top to bottom
+
+3) Finally SB is placed at end of the class.
+
+JVM activities w.r.t SMs
+=============================
+Then when we run a class with SMs
+
+JVM first allocates memory to all SVs with default values then 
+it will go to end of the class, and executes SB, initailzes SVs and executes SBs logic.
