@@ -1,3 +1,4 @@
+SMs and NSMs combo EF
 Static and non-static members combination execution flow
 ========================================================
 If a class contains both static and non-static members,
@@ -36,3 +37,28 @@ We can create object of a class any where in the class,
 
 Based on the place we have created object, the NSMs are executed
 in the middle of SMs execution.
+
+
+class Example {
+	static Example e1 = new Example()
+
+	static{
+		Sop("SB");
+	}
+
+	{ 
+		Sop("NSB");
+	}
+
+	Example(){
+		Sop("Constructor");
+	}
+
+	psvm(){
+		Sp("Main");
+		Example e2 = new Example();
+	}
+
+	static int a = 10;
+	int x = 20;
+}
