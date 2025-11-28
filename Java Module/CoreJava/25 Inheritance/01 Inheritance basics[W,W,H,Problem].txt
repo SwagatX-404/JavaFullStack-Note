@@ -1,0 +1,387 @@
+
+1) What is inheritance?
+2) When should we develop inheritance?
+3) Why should we develop inheritance?
+4) Advantaces of inheritance?
+5) Real-time examples of inheritance?
+6) How can we create inheriantace in Java?
+7) What is the difference between extends and implements?
+8) What is super class and sub class, alias names?
+9) A sample program on reusing super class members in sub class and in user class
+     by using sub class reference?
+10) Visible members - What members are inherited to sub cls?
+11) Execution flow points: SM EF and NSM EF with inheritance
+12) Working with super keyword forms super() and super.?
+13) Diff test cases on constructor execution from super class and sub class?
+
+
+
+
+Inheritance is a Parent-Child relation
+============================================
+Inheritance is the process of creating a new class deriving from an existing class 
+for obtaining type, properties and behaviours for extending or implementing
+the functionality of this existing object by reusing its existing properties 
+and behaviours is called inheritance
+
+When we want to extends or implement the funcationality of an existing object,
+we must develop inheritance.
+
+As part of inheritance we will develop sub type objects of an existing object.
+
+    For example:
+    for creating the object Student as sub type of the existing object Person, 
+    we must develop inheritance
+
+ class Person{
+    int eyes, ears, hands, legs;
+    String name;
+    double height, weight;
+ }
+
+ class Student extends Person{
+    int sno;
+    String course;
+    double fee;
+
+    void read(){
+
+    }
+    void write(){
+
+    }
+ }
+
+            Inheritance means
+            Extending & Reusing which is Already Made
+//////////////////////////////////////////////////////
+
+class B extends/implements A{}
+
+        B
+        subclass
+        child class
+        derived class
+
+        A
+        superclass
+        parent class
+        base class
+
+
+
+extends   vs
+====================
+1. It is used between class and class, interface and interface
+
+2. It provides reusability to sub classes. 
+    It means sub classes can directly uses the method given 
+    in super class without implementing it again.
+
+vs implements
+======================
+1. It is used for deriving a new class from a interface 
+   for implementing the mehthod given in this interface.
+
+2. It provides forcibility to sub classes. It means sub classes should 
+   implement the method declared in super class as per it requirement
+
+            class A extends class B
+            interface I1 extends interface I2
+
+            interface I3 implements class C
+            class A --- interface I4     ----> Not Possible
+
+class A{}
+class B extends A{}
+class C implements A{}   // CE : interface expected
+
+interface I1{}
+interface I2 extends I1{}
+interface I3 implements I1{} A    //CE: ';' expected
+
+class D implements I1{}
+class E extends I1{}    //CE: interface not allowed here
+
+interface 14 extends A{}        X
+interface 15 implements A{}     X
+
+    class A{
+
+        void m1() { }
+        }---------------------
+            class B extends A {
+
+            void m2(){ }
+
+                ps v main(String[] args){
+                B b1 = new B();
+                b1.m1();
+                b1.m2();
+            }
+        }
+
+
+        interface A {
+
+        void m1();
+        }-------------------------
+
+        class B implements A {
+
+            public void m1(){ }
+            void m2(){ }
+
+        ps v main(S[] args){
+        B b1 = new B();
+        b1.m1();
+        b1.m2();
+
+        }}
+
+
+    class Student { }  <--- Not a Person
+    ---------------------------------
+    class Person{ }
+    class Student extends Person{}
+
+    class Faculty extends Person {}
+    class Admin extends Person {}
+    ↑
+    now Student, Faculty, Admin are Person type objects
+
+
+class Lion{}   ---> not Animal
+
+class Animal{}
+class Lion extends Animal{}
+      ----
+        now Lion is animal type object
+
+
+→What is inheritance?
+===============================================================================
+    The proces of creating new class/object deriving from an existing class/object 
+    for obtaining type, properties and behaviours for extending and reusing 
+    existing object functionality is called inheritance.
+
+As part of inheritance what are we developing?
+---------------------------------------------------
+    Developing super class and subclasses super class is the existing class
+    sub classes are the new classes deriving from exiting cls
+
+When should we develop inheritance?
+---------------------------------------------------
+    1) For extending or implementing existing object functionality
+    2) To create multiple objects of same type as one group to achieve 
+       reusability and dynamic binding(LC, RP) among those sub objects 
+       and user class object we must develop inheritance
+
+     Animal extends Lion
+
+exiting object[type, properites, behaviours] ---->   (New object)
+
+Zoo[Animal a =] ---HAS-A ----Animal - Animal is Object    Lion, Tiger are Sub type   Zoo-user
+                                |
+                 Lion   Tiger  Rabbit  Cat  Dog
+
+Problem if we donot develop inheritance while creating sub type
+==============================================================================
+    class Canteen {
+            void eat(????){
+                Student s
+                Faculty f
+                Admin a
+            }   ///can not receive all type object
+    }
+SB:
+can not execute the invoked method from diff classes dymaically at run the time
+Problem #1: Tight Coupling
+Problem #2: Static Binding
+-------------->
+
+    Student
+        eyes, ears, hands, legs, name, height weight, email, mobile, addr, aadhaar
+        sno, course, fee, marks
+        eat(), sleep(), play(), learn()
+        listen(), reply(), write(), read()
+
+    Faculty
+        eyes, ears, hands, legs, name, height weight, email mobile, addr, aadhaar
+        eno, dept, sal, exp
+        eat(), sleep(), play(), learn()
+        teach(), motivate(), guide(), prepareMaterial(), exam()
+
+    Admin
+        eyes, ears, hands, legs, name, height, weight, email, mobile, addr, aadhaar
+        ano, block, sal, exp
+        eat(), sleep(), play(), learn()
+        checkID(), manage(), report()
+
+PROBLEM #1 : Code Redundancy
+
+We will face three problems
+
+1) Code Redundancy - sub class dev
+2) Tight Coupling   -user class dev
+3) Static Binding  
+
+Adv #1 : Code Resuability
+
+        Person
+        [eyes, earrs, hands, legs, name, height, weight, email, mobile, addrs, adhar]
+        [ void eat(), void sleep(), void pla(), void learn() ]
+
+Adv of inheritance
+==================
+- Write or modify code at one place common to all other classes is code reusability
+
+- define one parameter to receive any type of sub types of a given object and changing 
+  one sub type to another sub type at runtime without modifying code is called loose coupling (1p<-Mo)
+
+- taking decision in executing the invoked method from diff sub classes based on the passed object 
+  is called dynamic binding or RP
+
+
+What is the problem if we develop inheritance for fun only for reusing object properties and behaviours?
+========================================================================================================
+For reusing existing class members, If we develop inheritance just for fun then we will face below four problems
+
+1) Eager loading of class means
+---------------------------------
+    When we load our class, that existing class is also loaded, 
+    even though we have not required it at time and 
+    even though we have not accessed any member of that existing class
+
+2) Waste of memory
+-------------------
+    - That existing class is loaded, static variables memory allocated and SB are excuted 
+    for this some memory and time is consumed which is waste of memory and time.
+
+    - When we create our class object, that existing class non-staic members memory 
+    is allocated in our class object, NSB and constructor are executed from that existing class 
+    for this some memory and time is consumed which is waste of memory and time.
+
+3) Can not unload class and can not destroy memory
+----------------------------------------------------
+    When we no longer needed of that existing class and its object 
+    we can not unload that class and can not unreference and destory that class object
+    because our class is dependent of that class type and members and that class non-static members 
+    are provided memory in our class object.
+
+    Hence that exist class bytecode, static and non-static members memory are available 
+    in JVM as long as our class and object is available.
+
+    If we want unload and destory its memory, we must unload our class and destory our object.
+
+4) Not easy to modify code
+--------------------------
+Type wise our class becomes tightly coupled, can not be changed to other type at runtime. 
+----------------------------------------------------------------------------------------
+    Java does not support multiple inheritance, so a class can be derived and reuse only one class 
+    So, we want to reuse members from multiple classes, it is not possible by using inheritance.
+    Our class becomes specific to one particular type object
+
+        class Customer extends Pulsar{      }
+        ---------must modify code---->
+        class Customer extends Bullet {     }
+
+    As per above example the object Customer life long can use only the object Pulsar 
+    If customer wants to change to Bullet at runtime, it is not possible, 
+    we must modify code because inheritance creation is part of declaration, 
+    declaration can be change only by changing code and move over where ever this cusomter going
+    every where this Pulsar also will come, its become a kind of attaching to body.
+
+Due to above problems of Inheritace/IS-A relation and due to above advantages 
+of HAS-A relation
+
+    For reusing existing object functionality We must prefer HAS-A over IS-A
+
+Between Two diff types of objects We must develop HAS-A relation for reusability 
+and to modify code easily
+
+Only for extending or for implementing exsting object functionality, 
+we must use IS-A, ofcourse only IS-A can work.
+
+
+For reusing existing object funcationality HAS-A relation is best. 
+In HAS-A relation we donot have all above inheritance problems:
+--------------------------------------------------------------------------------------
+    1) In HAS-A relation the other class is loaded only when we access its member, 
+       when not when our class is loade, and that to this class is loaded and 
+       stored individually without linking to our class.
+
+    2) In HAS-A relation, the other class object is created separately with an local 
+       or non-static or static instance variable, but not inside our object
+
+    3) so that when we no need this class and its object, we can unload this class, 
+       unrefrence and destroy its object without unloading our class and without destorying our class object
+
+    4) Because we are storing other class object by using a ref variable as 
+       when we need we can change to other object at runtime, without modifying our code.
+
+It works like plug and unplug Hence program becomes dynamic
+
+    class Customer{
+        void driver(Vehicle v){
+
+        }
+    }
+
+    Customer sk = new Customer();
+    sk.drive(new Pulsar());
+    sk.drive(new Bullet());
+
+    interface Vehicle{}
+    class Bike implement Vehicle{}
+    class Pulsar extends Bike{}
+    class Bullet extends Bike{}
+
+difference Between Inheritace(IS-A) and Composition(HAS-A)
+=====================================================================
+Inheritance(IS-A)
+------------------
+    1) We must develop inheritance between Parent and Child relation objects
+
+    2) We must develop inheritance for extending or implementing an existing 
+    object functionality
+                            or
+       We must develop inheritance for creating sub types of an existing objects.
+
+    3) We will develop inheritance either by using extends or by using implements or keywords
+
+    4) when we load our class super class is also loaded when we create our 
+       class object super class instance members are also provided in our object
+
+    5) The super class instance members memory is created inside our class object, 
+       hence we can not destroy its memory without destroying our class object.
+
+    6) It is Tight coupled with one object and not easy to maintain code 
+
+       **Can not change one tech to another**
+
+    7) It is not prefered for just reusing it is prefered for extending + reusing
+
+Composition(HAS-A)
+-------------------
+    1) We must develop composition between two different type of objects
+
+    2) We must develop composition when we need to reuse exsiting object's functionality
+       in a loosely coupled way.
+
+    3) We will develop composition by using instance referenced variable
+
+    4) When we load our class and when we create our class object only 
+       our class is loaded and our class object is created. 
+       That reusing class is loaded and object is created only when we create its object
+
+    5) This reusing class instance memory is created seperately outside of our 
+       class hence we can unrefrence it and destroy it without destroying our object
+
+    6) It is Loosely coupled with other objects and its is easy to maintain code
+
+       **Can change from one technology to another easily**
+
+    7) It is prefered for reusing
+
+       it can not extend can only used for reusing
