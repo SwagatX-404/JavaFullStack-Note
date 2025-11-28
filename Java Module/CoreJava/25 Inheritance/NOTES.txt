@@ -1,0 +1,807 @@
+Working with Inheritance and LC-RP Architecture
+================================================
+01. What is an inheritance?
+02. Why inheritance?
+03. When inheritance?
+04. How inheritance?
+05. Sample program and execution flow?
+0
+06. Sample program to show Problems if we donot develop inherinace;
+0   problems and advantages if we develop inheritance?
+07. LC-RP architecture, how inheritance supports LC and RP(Dynamic Binding)?
+08. Problems if you develop inheritance for fun?
+09. Why must we favour to HAS-A relation over IS-A relation?
+10. Test case programs on inheritance to show type, reusability, visibility?
+11. Project develop by using OOp Basics, Encapsulation and Inheritance?
+===================================================================================
+1. What is an inheritance?
+	- Inheritnace is a one of the OOP principles	
+
+	- It is a Parent-Child relation
+
+	- The process of creating a new class/object 
+	  deriving from an existing class/object 
+	  is called inheritance.
+	
+	- For example:  
+	  class A { }
+	  class B extends A{ } //here we are deriving 
+	                       //class B from class A
+
+	- class A is called Super class or Parent class Or Base class
+	- class B is called Sub class or Child class or Derived class
+
+2. Why Inheritance?
+	- We will develop inheritance for obtaining 
+	  'type, properties and behaviors' of 
+	  an existing class/object to new class/object
+	  for treating this new class/object as sub type of 
+	  an existing class/object 
+	  
+	- For example  
+		- for creating Student as Person type
+		- for creating Lion    as Animal type
+		- for creating Bus     as Vehicle type
+	   we must develop inheritance
+	   
+	- As part of inherintace we will develop
+	  a new class as child classes or sub type classes 
+	  of an existing class or object.
+
+3. When must we develop inheritance?
+   we must develop inheritance in the below two situations
+	1. for extending or implementing existing class functionality 
+	   by adding new properties and new behviours in this 
+	   new class as sub type
+	   
+	   - For example:
+		class Person { String name;}
+		class Student extends Person{ String course;}
+		
+	   - for adding more properties and behaviors to Person 
+	     we will extend Person class by creating new class
+	  
+	2. for creating multiple new objects of same type as one group 
+	   for achieving 'code reusability and loose coupling' 
+	   between user object and sub type objects 
+	   we will develop inheritance.
+	   
+	     - For example: without inheritance
+		class Person { }	here all these 4 objects	
+		class Student { }	are individual objects	
+		class Faculty { }	not same type of objects
+		class Admin { }
+	   
+	     - with inheritance we can create Student, Faculty and Admin
+	       objects as same type of objects Person
+	     
+		class Person { }	
+		class Student extends Person{ }	
+		class Faculty extends Person{ }		
+		class Admin   extends Person{ }	
+
+4. Definitaion of inheritance as per interview?
+	- The inheritance is one of the OOP principles
+	- It is a Parent-Child relation
+	
+	- The process of creating new class deriving from an existing class
+	  for obtaining exiting object properties and behaviours to the new object
+	  for extending or implementing existing object functionality is called
+	  inheritnace.
+	  
+	- As part of inheritance we will create sub types of an existing object
+
+	- The advantanges of inheritance are
+		1. Obtaining type
+		2. Code resuability
+		3. Overring the functionality
+		4. Extending the functionality 
+		5. Implement the functionality
+		6. Loose coupling
+		7. Runtime Polymorphsim
+		
+
+5. How can we develop inheritance?
+	- by using the keywords
+		1. extends 
+		2. implements
+
+	- For deriving a class from an interface 
+	  we must use implements keyword
+	   for example:
+	   	interface Example { }
+		class Sample implements Example{ }
+
+	- For deriving a class from a class or 
+	  for deriving an interface from an interface
+	  we must use extends keyword
+	   for example:
+		class A { }
+		class B extends A { }
+
+		interface I1 { }
+		interface I2 extends I1 { }
+		class C implements I2 { }
+
+ 6. Sample program and execution flow
+	//Example.java 
+	class Example {
+	   static int a = 10;
+	   int x = 20;
+	}
+
+     //====================================================
+	//Sample.java
+	class Sample extends Example {	//IS-A relation(Inheritance)
+                                  
+		public static void main(String[] args) {
+			Sample s1 = new Sample(); //accessing with IS-A relation
+			System.out.println(s1.a);
+			System.out.println(s1.x);
+		}
+	    
+	}
+
+7) Identify are below objects' classes created correctly or wrongly?
+	class Student {}	wrong design
+
+	class Lion {}		wrong design
+
+	class HDFCBank {}	wrong design
+
+	class Rectangle {}	wrong design
+
+	class Airtel {}		wrong design
+
+   becuase all above objects are not main or individual objects
+   the above all objects are sub types of other main or individual objects
+   so we must create above classes as sub type but not as individual objects 
+
+   below code shows creating above objects as sub types 
+   by developing inheritance by using 'extends and implement' keywords
+	class Person { }
+	class Student extends Person{ }		//correct desing
+
+	interface Animal { }
+	class Lion implements Animal { }	//correct desing
+
+	class Bank { }
+	class HDFCBank extends Bank { }		//correct desing
+
+	interface Shape { }
+	class Rectangle implements Shape { }	//correct desing
+
+	interface Sim { }
+	class Airtel implements Sim { }		//correct desing
+
+8) How many ways we can reuse existing class members in new class?
+   In 2 ways	
+	1. by using HAS-A relation (Association)
+	2. by using IS-A relation (Inheritance)
+
+	- HAS-A relation means 
+		creating existing class object in new class
+		and accessing members by using the existing class object
+	
+	- IS-A relation	means
+		creating new class deriving from an existing class
+		and accessing existing class members by using this new class object
+
+ - Below code explains access Person class members in Student class for Person object
+   with HAS-A relation( Person class members are not executing for Student object)
+
+	class Person {
+		Sting name;
+
+		void eat() {
+			System.out.println(name + " is eating");
+		}
+	}
+
+	class Student {  
+		public static void main(String[] args) {
+		  //=== HAS-A === realation wise reusing
+			Person p1 = new Person();//Student class is reusing
+			p1.name = "Hari";	//Person class and its memebers
+			p1.eat();		//for perform operation for Person
+		}
+	}
+	with HAS-A relation we are reusing 
+	Person and its members for Person but not for student
+
+	for using Person members for Student, 
+	we must develop IS-A realtion(Inheritance)
+
+	By developing inheritance we are 
+	'extending and reusing' existing class members
+	for new class object as if those existing members are
+	available in this new class
+
+	class Student extends Person { //extending Person to use as Student
+
+		public static void main(String[] args) {
+		  //reusing with IS-A relation	
+			Student s1 = new Student();	
+			s1.name = "hari";	//we are accessing and reusing
+			s1.eat();		//existing class Person members
+						//as if those were own members of 
+		}				//Student object 
+	}
+
+  //=====================================================================
+	Inheritance is meant for 'extending + reusing'
+  //=====================================================================
+
+9) Can we store one class object in another class type referenced variable?
+   If object's class is SUB CLASS of referenced variable class, 
+   we can store.
+
+  Identify CE in the below program?
+
+	class Animal { }
+	class Lion { }
+
+	class Test {
+	   public static void main(String[] args) {
+
+		Animal a1 = new Animal();	//allowed, same type
+		Lion   l1 = new Lion();		//allowed, same type
+
+		//Animal a2 = new Lion();	//not allowed, not IS-A relation
+		Person p1 = new Student();	//allowd, Student IS-A Person type
+
+	   }
+	}
+
+  when we develop inheritance, 
+	the new type object/class obtains the existing object/class 
+	  'type, properites and behaviors' and 
+	this new object is considered as
+	existing class object type.
+
+  hence we can stored the sub type object
+	//1. either in its own type referenced variable
+	//2. or     in its super type referenced variable
+
+	Student s1 = new Student(); //same type referenced variable, allowed
+	Person  p1 = new Student(); //super type referenced variable, allowed
+
+  but we can not store Super class object in sub class type variable	
+	Student s2 = new Person(); //not allowed, 
+			//sub type refernced variable with super type object
+
+//concusion: 
+ - The object type class(RIGHT side class) 
+    must be same or sub type class of variable type class(LEFT side)
+
+	A a1  = new B();
+
+	class B must be sub class of class A
+	else we will get CE: incompatible types
+
+==========================================================================
+Complete program on Inheritance with Real time example
+that shows 'extending and reusing' the existing object functionality
+==========================================================================
+//Creating Person as super class common to all sub classes Student, 
+//Faculty and Admin with common properties and behaviors of all sub types
+//persopn.java
+class Person {
+	
+	static int eyes;
+	static int ears;
+	
+	String name;
+	double height;
+	double weight;
+	
+	void eat() 	{ System.out.println(name + " is eating Veg"); }
+	void sleep(){ System.out.println(name + " is Deep Sleeping");}
+	void walk() { System.out.println(name + " is walking from Ameerpet to Hostel");}
+	
+}
+//new type of object extending the existing object Person
+//and having specific properties and behaviors of this sub type object
+class Student extends Person { //1. inheritance [for obtaining t,p,b]
+	
+		//+
+	
+//2. extending functionality [adding more properties and behaviors ]	
+	int sno;				  //[as per this new object JOB/functionality]
+	String course;
+	double fee;
+						//3. reusing super class property in sub class 
+						//directly by its name as if it is 
+						//declared in sub class
+	void listen() { System.out.println(name + " is listening " + course); }
+	void reply() { System.out.println(name + " is replying " + course + " questions");}
+	void write() { System.out.println(name + " is writing " + course + " notes");}
+	void read() { System.out.println(name + " is reading " + course + " notes");}
+}
+
+//another sub type Employee
+class Employee extends Person {
+	double sal;  //common properties of all employees
+	double exp;
+}
+
+class Faculty extends Employee {
+	
+	int fno;				//specific properties of Faculty
+	String dept;
+	
+	void teach() { }
+	void conductExam() { }
+	
+}
+
+class Admin extends Employee {
+	int ano;				//specific properties of Admin
+	String block;
+	
+	void checkIDCard() { }
+}
+
+public class Institute { //user class for accessing object [super and sub type]
+						//functionality
+	public static void main(String[] args) {
+		Person p;
+		
+		//Obtaining type [storing sub class object in super class variable]
+		p = new Student();
+		p = new Faculty();
+		p = new Admin();
+		
+		//reusing both sub class and super class members 
+		//by using sub type
+		Student s1 = new Student();
+		s1.name = "HK";
+		s1.course = "FSD";
+
+		s1.eat();
+		s1.listen();
+		s1.read();
+		s1.sleep();
+	
+
+	}
+}
+
+Problem in the above code is it is weak encapsulated class
+because we have provided direct access to fields of sub class and super
+it is a wrong design code
+
+Sample project on OOP Basics, Encapsulation and Inheritance 
+	- The main purpose of inheritance is 
+	  extending and reusing exising class/object 
+	  functionality as sub type 
+	  
+	  
+Develop a project to create real world object Person 
+with its sub types 'Student, Faculty and Admin' and user type 'College' 
+by developing 
+	1. OOP basics[class,f<s,ns>,b<s,ns>,c<dc,np,p>,m<s, ns{s,g,b,d}>,instances]
+	2. Encapsulation and 
+	3. Inheritance 
+for obtainting Security, code reusability, Loose coupling, Dynamic binding/RP
+
+//Person.java (super class)
+public class Person {			//Inheritance (extending from Object class)
+	
+	//static fields with data hiding
+	private static int eyes;
+	private static int ears;
+	private static int hands;
+	private static int legs;
+	
+	//non-static fields with data hiding
+	private String name;
+	private double height;
+	private double weight;
+		
+	static {					//encapsulation
+		eyes	= 2;
+		ears	= 2;
+		hands	= 2;
+		legs	= 2;
+	}
+	
+	public Person(String name, double height, double weight) {  
+		this.name	= name;
+		this.height = height;
+		this.weight = weight;
+	}
+
+	//setter and getter method for static fields
+	public static int getEyes() {
+		return eyes;
+	}
+	
+	public static void setEyes(int eyes) {
+		Person.eyes = eyes;
+	}
+	
+	public static int getEars() {
+		return ears;
+	}
+	
+	public static void setEars(int ears) {
+		Person.ears = ears;
+	}
+	
+	public static int getHands() {
+		return hands;
+	}
+	
+	public static void setHands(int hands) {
+		Person.hands = hands;
+	}
+	
+	public static int getLegs() {
+		return legs;
+	}
+	
+	public static void setLegs(int legs) {
+		Person.legs = legs;
+	}
+
+	//setter and getter method for non-static fields
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public double getHeight() {
+		return height;
+	}
+	
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	
+	public double getWeight() {
+		return weight;
+	}
+	
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	
+	//Business logic methods
+	public void eat() {
+		System.out.println(name + " is eating"); 
+	}
+	
+	public void sleep() { 
+		System.out.println(name + " is deep sleeping");
+	}
+	
+	//method for returning 'object state' to println() method to print on console
+	@Override
+	public String toString() {	//Polymorphism (method overriding from Object class)
+		return	" eyes\t\t: "	+ eyes		+"\n"+
+				" ears\t\t: "	+ ears		+"\n"+
+				" hands\t\t: "	+ hands		+"\n"+
+				" legs\t\t: "	+ legs		+"\n"+
+				" name\t\t: "	+ name		+"\n"+
+				" height\t\t: " + height	+"\n"+
+				" weight\t\t: " + weight;
+	} 
+
+}
+
+//Student.java (sub class 1)
+import java.util.Scanner;
+public class Student extends Person {		//inheritance
+	
+	//static field with data hiding
+	private static String institute;
+	
+	//non-static field with data hiding
+	private int sno;
+	private String course;
+	private double fee;
+	
+	static {									//encapsulation
+		Scanner scn = new Scanner(System.in);
+		
+		System.out.println("Enter institute: ");
+		institute = scn.nextLine();
+	}
+	
+	public Student(String name, double height, double weight,
+						int sno, String course, double fee) {
+
+		super(name, height, weight);
+
+		this.sno	= sno;
+		this.course = course;
+		this.fee	= fee;
+
+	}
+
+	public static String getInstitute() {
+		return institute;
+	}
+	public static void setInstitute(String institute) {
+		Student.institute = institute;
+	}
+	public int getSno() {
+		return sno;
+	}
+	public void setSno(int sno) {
+		this.sno = sno;
+	}
+	public String getCourse() {
+		return course;
+	}
+	public void setCourse(String course) {
+		this.course = course;
+	}
+	public double getFee() {
+		return fee;
+	}
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+	
+	public void listen() { 
+		System.out.println(getName() + " is listening "+ course);
+	}
+	
+	public void reply() { 
+		System.out.println(getName() + " is replying to "+ course + " questions");
+	}
+	
+	public void read() {
+		System.out.println(getName() + " is reading "+ course + " material");
+	}
+	
+	public void write() { 
+		System.out.println(getName() + " is writing " + course + " notes");
+	}
+	
+	@Override
+	public String toString() {
+				
+		return	super.toString() + "\n" +
+				" institute\t: "	+ institute + "\n" +
+				" sno\t\t: "		+ sno		+ "\n" +
+				" course\t\t: "		+ course	+ "\n" +
+				" fee\t\t: "		+ fee;
+	}	
+}
+
+//Faculty.java (sub class 2)
+import java.util.Scanner;
+public class Faculty extends Person{
+
+	private static String institute;
+	
+	private int eno;
+	private String dept;
+	private String subject;
+	private double sal;
+	
+	static {									
+		Scanner scn = new Scanner(System.in);
+		
+		System.out.println("Enter institute: ");
+		institute = scn.nextLine();
+	}
+
+	public Faculty(String name, double height, double weight,
+						int eno, String dept, String subject, double sal) {
+		super(name, height, weight);
+		this.eno		= eno;
+		this.dept		= dept;
+		this.subject	= subject;
+		this.sal		= sal;
+	}
+	
+	public static String getInstitute() {
+		return institute;
+	}
+
+	public static void setInstitute(String institute) {
+		Faculty.institute = institute;
+	}
+
+	public int getEno() {
+		return eno;
+	}
+
+	public void setEno(int eno) {
+		this.eno = eno;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public double getSal() {
+		return sal;
+	}
+
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+
+	public void teach() { 
+		System.out.println(getName() + " is teching "+ subject);
+	}
+	
+	public void prepareMaterial() { 
+		System.out.println(getName() + " is preparing "+ subject + " material");
+	}
+	
+	@Override
+	public String toString(){
+		
+		return	super.toString()					+ "\n" +
+				(" institute\t: "	+ institute)	+ "\n" +
+				(" eno\t\t: "		+ eno)			+ "\n" +
+				(" dept\t\t: "		+ dept)			+ "\n" +
+				(" subject\t: "		+ subject)		+ "\n" +
+				(" sal\t\t: "		+ sal) ;
+	}
+}
+
+//Canteen.java (user class)
+public class Canteen {
+	//void eat(Student s) {			//Tight Coupling 
+	//		s.eat();				  //Static Binding
+	//}
+
+	//void eat(Faculty f) {			//Tight Coupling
+	//		f.eat();				  //Static Binding
+	//}
+	
+	void eat(Person p) {			//Loose Coupling 
+		p.eat();						//Dynamic Binding
+	}
+}
+
+
+//TC and SB											//TC and SB	[CDMA Mobile and SIM]			
+	//HDFCATM with HDFCCard, withdraw() operation			//AirtelMobile with Airtel, call() operation 
+	//ICICIATM with ICICICard, withdraw() operation			//BSNLMobile with BSNL, call() operation   
+	//SBIATM with SBICard, withdraw() operation				//JioMobile with jio, call() operation          
+																										                                                                                        
+																										                                                                                        
+//LC and DB												//LC and DB [GSM Mobile and SIM] 
+	//ATM with ATMCard[H, I, S], withdraw() operation		//Mobile and SIM[A, B, j], call() operation     
+																										                                                                                        
+
+//main method class
+public class College {
+	public static void main(String[] args) {
+/*		
+		Person p1 =  new Person("HK", 6.2, 200); 
+		System.out.println(p1);
+		System.out.println();
+*/	
+		Student s1 = new Student("HK", 6.2, 200, 101, "CJ", 3500);
+//		System.out.println(s1); 
+		System.out.println();
+
+		Faculty f1 = new Faculty("BK", 6.2, 200, 101, "FSJD", "CJ", 4500);
+//		System.out.println(f1);
+		System.out.println();
+
+		System.out.println("============================================");
+		s1.eat();
+		s1.sleep();
+		s1.listen();
+		s1.reply();
+		s1.write();
+		s1.read();
+		System.out.println("\n============================================");
+
+		f1.eat();
+		f1.sleep();
+		f1.teach();
+		f1.prepareMaterial();
+		System.out.println("============================================");
+
+		Canteen hkCanteen = new Canteen();
+		hkCanteen.eat(s1);		//message passing
+		hkCanteen.eat(f1);
+
+/**/		
+	}
+}
+
+/*
+ * What is an inheritance and why inheritance?
+ *  - It is a one of the OOP principles
+ * 
+ *  - It is a parent-child relation
+ *  	- Here parent means the existing class
+ *  	- Child means the new class deriving from this existing class
+ *  
+ *  - The process of creating a new class deriving from an existing class
+ *    for obtaining type, properties and behaviors of an existing object to 
+ *    this new object for "extending or implementing" that existing object 
+ *    functionality by adding new properties and behavior implementation
+ *    is called inheritance
+ *   
+ * When must we develop inheritance?
+ *  - for creating a sub type object 
+ *    for extending or implementing functionality 
+ *    of an existing object by adding new properties and 
+ *    behaviors as per this new object job/functionality 
+ *  
+ *  - and also inheritance is used for   
+ *    creating multiple objects of same type as
+ *    one type for achieving code reusability, 
+ *     Loose coupling and runtime polymorphism
+ *    between user object and sub type objects
+ *
+ * How can we develop inheritance?
+ * 	by using two keywords
+ * 		1. extends
+ * 		2. implements
+ *      
+ *     - we must use extends keyword
+ *         	for deriving a new class from an existing class or 
+ *         	for deriving a new interface from an existing interface
+ *         
+ *     - we must use implements keyword
+ *     		for deriving a new class from an existing interface
+ *     
+ * For what purpose we must develop inheritance?
+ * 	1. Is it for reusing?    No
+ * 	2. Is it for extending?  Yes
+ * 
+ *      Inheritance is meant for 'extending and then reusing'
+ *      
+ *      For just reusing do not develop inheritance
+ *      develop HAS-A relation, means create object of that class
+ *      and access its members
+ *      
+ *      Inheritance is meant for 
+ *      	[extending + reusing]
+ *
+ * Why must we develop inheritance, means why must we develop
+ * separate sub class, why can not we develop all properties and 
+ * behaviors of different sub type objects in single class?           
+ * 
+ * - If we place all different sub type objects properties and
+ * 	behaviors in a single class we can not separate and reuse
+ *  each sub type properties and behaviors as specific type of object
+ *  
+ * - We must place common properties and behaviors 
+ *   of all sub types in one class that is super class
+ *   and we must place a sub type individual properties and
+ *   behaviors in a separate class as sub class extending from
+ *   this super class  
+ * 
+ * - By creating as separate class we are separating properties and 
+ *   behaviors of one sub type from other sub types, so that we 
+ *   use this object as a special operations object.
+ *   
+ * - By extending from super class, this new class/object
+ *   is treated as the super class object type, then 
+ *   where ever the super type object is allowed to there 
+ *   this new sub type object is also allowed to store, pass and return 
+ *   
+ * - for example if we do not create Student as sub class of 
+ *   class Person, then Student is not look as Person
+ *   
+ */
