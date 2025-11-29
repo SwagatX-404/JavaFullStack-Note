@@ -1,0 +1,120 @@
+→When we develop inheritance, what will subclass get?
+========================================================================
+    1) type
+    2) properties
+    3) behaviours of super class
+
+What is the meaning of obtaining super cls type to subcls?
+========================================================================
+    sub class will be treated as of super class type, then 
+    where ever super class type variable exist, to there 
+    we can pass and store sub class object reference as below
+
+            class Person{}
+            class Student extends Person{}
+
+            Student s1 = new Student();
+            Person p1 = new Student(); ✓
+
+            void m1(Person p){
+            }
+
+            m1(new Person());
+            m1(new Student());
+
+Summary:
+=======
+    We must follow the rule for storing one class object 
+    in another class type variable, those both class must have
+    inheritance relation.
+
+The object type class must be sub class of variable type class
+
+Example:
+    class Animal{}
+    class Tiger{}
+
+    Animal a = new Tiger();   //CE:Tiger is not created as sub class of Animal
+
+========================================================================
+    What is the meaning of sub class obtain properties and behaivours of super class?
+
+    What is the menaing of super class members are inherited to sub class?
+
+    Does mean, are all members of super class copy and pasted in sub class.class file?
+
+| The meaning of super class members are inherited to sub class (or)
+  the meaning of sub class obtain super class properties and behaviours is:
+
+Sub class will get permission to access super class properties and behaviours
+        1) either directly by their name in sub class
+        2) or by using sub class name
+        3) or by using sub class object ref
+as if they were defined in the sub class.
+
+
+            class A{
+
+                static int a = 10;
+                int x = 20;
+
+            static void m1(){
+             Sopln("m1");
+            }
+
+            void m2(){
+             Sopln("m2");
+            }
+            }
+    super class
+    ===========
+    type
+    properties
+    behaviours
+    ===========
+    sub class
+
+            class B extends A {
+
+            ps v main(String[] args){
+            Sopln(a);
+            m1();
+
+            Sopln(X);  //CE
+            m2();   //CE
+            }}
+
+Is it possible to access all members of super class in sub class?
+========================================================================
+No, only visible members are accessible
+
+What are the members visible to subclass?
+========================================================================
+
+    1. only protected and public membes are always visible to same package or 
+            another package subclasses
+    2. default members are visible to only same package subclasses
+    3. private members are not visible to either same/different pacakge sub classes
+
+We can not access private members of super class in subclass, compiler will throw error.
+
+        pkg p1
+        class B extends class A
+            private p
+                    q
+            protected r
+            public   s
+
+        pkg p2
+        class B
+
+
+Is it possible to access all members of super class from sub class? 
+No, only visible members are allowed
+========================================================================
+package p2;
+
+    class B extends A {
+         only protected and public memers are visible to here
+       }
+    default is visible only within the same pack
