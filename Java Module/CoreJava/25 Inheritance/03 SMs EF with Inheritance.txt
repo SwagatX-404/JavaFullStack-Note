@@ -1,0 +1,287 @@
+//Test1.java
+        class A {
+
+        static int a = 10;
+        static {
+        System.out.println("class A SB is exec
+        }
+        public static void main(String[] args){
+        System.out.println("A main");
+        }
+        }
+
+            class B extends A{
+
+            static int b = 20;
+            static {
+            System.out.println("class B SB is exec }
+            public static void main(String[] args) {
+
+            System.out.println("B main");
+            System.out.println("a: "+ a);
+            System.out.println("b: "+ b);
+            }
+            }
+O/P
+=====
+class A SB is executed
+class B SB is executed
+B main
+a: 10
+b: 20
+
+.......................................................................
+
+Order of execution of SMs with inheritance
+========================================================================
+When a sub class is loaded into JVM, all its super classes are also loaded into JVM. 
+Then JVM will run SMs from both sub class and from all its super classes in the 
+below order from the ROOT super class to Current sub class 
+
+    1) SVs memory is allocated with DV from RSC to CSC
+    2) SVs initialization and SBs logic is exected from RSC to CSC in the order they defined
+    3) Finally MM is executed from CSC, if MM is not available in CSC, it is executed from its super class.
+    4) static method is executed only if we call.
+.......................................................................
+//Test2.java
+
+        Class A{
+
+            static static int int
+            a = m1();
+            static int m1(){
+            System.out.println("A SV");
+            return 10;
+            }
+
+        static{
+        System.out.println("A SB");
+        }
+
+        public static void main(String[] args) 
+        { System.out.println("A MM");
+        }
+        }
+
+
+            class B extends A{
+
+                static int b = m2();
+                static int m2(){
+                System.out.println("B SV");
+                return 20;
+                }
+
+                static{
+                System.out.println("B SB");
+                }
+                public static void main(String[] args){ 
+                    System.out.println("B MM"); }
+            }
+A SV
+ASB
+B SV
+B SB
+B MM
+.......................................................................
+
+>java Sample
+
+    MA
+        Object
+
+            Example
+            a
+            m1()
+            main
+            static{ }
+        ↑
+        Sample
+        b
+        m2()
+        main
+        static{}
+
+HA-----------------------------
+
+    JSA
+        main thread
+            Example.m1()   X
+            Example.static{ }   X
+            Sample.m2(){ }   X
+            Sample.static {}  X
+            Sample.main(S[]){ }  X
+
+.......................................................................
+
+        class A{
+        static int m1(){
+        System.out.println("A SV"); return 10;
+        }
+
+        static{ } System.out.println("A SB");
+        static int a = m1();
+        public static void main(String[] args) { 
+            System.out.println("A MM"); }
+        }
+
+
+            class B extends A{
+            static int b = m2();
+            static int m2(){
+            System.out.println("B SV");
+            return 20;
+            }
+
+            static { } System.out.println("B SB");
+            public static void main(String[] args) {
+            System.out.println("B MM");
+            }
+            }
+
+ASB
+ASV
+B SV
+B SB
+B MM
+.......................................................................
+
+        Class A{
+
+        static int m1(){
+        System.out.println("A SV");
+        return 10;
+        }
+
+        static{ } System.out.println("A SB");
+        static int a = m1();
+        public static void main(String[] args) { System.out.println("A MM"); }
+        }
+
+
+            class B extends A{
+            static int b = m2();
+            static int m2(){ System.out.println("B SV");
+            return 20;
+            }
+
+            static{
+            System.out.println("B SB");
+            }
+            }
+
+1.6 --> can run->SV, SB exe 
+        exec MMNF
+1.7 --> excер MM NF
+.......................................................................
+
+        class A {
+        static int a = 10;
+
+            static{
+            System.out.println("In A SB");
+            System.out.println("a: "+a);
+            System.out.println("b: "+b);
+            System.out.println("b: "+B.b);
+            System.out.println("b: "+B.getB());
+            }
+        }
+
+            class B extends A {
+
+                static int b = 20;
+                static{
+                System.out.println("In B SB");
+                System.out.println("a: "+a);
+                System.out.println("b: "+ b);
+                System.out.println("b: "+ getB());
+                }
+
+                static int getB(){
+                return b;
+                }
+
+            public static void main(String[] args) {
+            System.out.println("In B main");
+            System.out.println("a: "+a);
+            System.out.println("b: "+b);
+            }
+In A SB
+a: 10
+b: 0
+b: 0
+.......................................................................
+
+1) if we access sub class SV in super class SB, we will get its default value, 
+   but not its assigned value. In above program we will get 0 but not 20,
+   because by the time SB is running in super class, in sub class SV has 
+   already provided memory with default value and it is not initlaized with given value.
+
+2) we can not access sub class members in super class directly by thier name, compiler throw error, 
+   because from super class, compiler can not find sub class because super class does not have extends 
+   to sub class and we did not use sub class reference.
+
+3) for acessing sub class members in super class, we must use sub class reference 
+   either class name or sub class object referenced variable
+.......................................................................
+
+        class A {
+
+        static int a = 10;
+        static{
+        System.out.println("In A SB");
+        System.out.println(" a: "+a);
+        System.out.println(" b: "+B.b);
+        }
+        public static void main(String[] args){
+                System.out.println("\nIn A MM");
+                System.out.println(" a: "+a);
+                System.out.println(" b: "+B.b);
+        }
+        }
+
+            class B extends A {
+
+            static int b = 20;
+            static {
+            System.out.println("\nIn B SB");
+            System.out.println(" a: "+a);
+            System.out.println(" b: "+b);
+            }
+
+            public static void main(String[] args) {
+                    System.out.println("\nIn B main");
+                    System.out.println(" a: "+a);
+                    System.out.println(" b: "+b);
+            }
+            }
+
+//>java A   //java B
+    .......................................................................
+
+    class A{
+
+    static int a = 10;
+    static{
+    Sopln("Hi");
+    }
+    }
+
+
+        class B extends A{
+
+        static int b = 20;
+        static{
+        Sopln("Hello");
+        }
+        }
+
+
+            class Test {
+
+            ps v main(String[] args){
+            System.out.println(B.a);
+            }
+            }
+            
+//OP : Hi 10
